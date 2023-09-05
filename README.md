@@ -6,3 +6,7 @@ University of Georgia CSCI 4370
 <a href="https://piazza.com/class/lli77y906cp5ty">Piazza Link</a>
 
 ##  Assignment 1 Due September 10th!
+
+
+## Outline of Database
+<img title="db_outline" alt="shout out pulaski" src="https://raw.githubusercontent.com/cprimis/CSCI4370_CCQ/main/csci4370_table_for_ref.png">
