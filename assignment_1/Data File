@@ -12,3 +12,25 @@ INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1203, 'Georgi
 INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1205, 'Heath', 'Hughes', '2002-08-17', 'Music');
 INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1207, 'Issac', 'Irvine', '2000-06-28', 'Comp. Sci.');
 INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1209, 'Julia', 'Johnson', '2002-02-13', 'Comp. Sci.');
+
+/* Courses Table Data Values, 20 Values */
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('CS01', 'Introduction to Computing', 3);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('CS02', 'Software Development', 4);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('CS03', 'Java Principles', 3);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('CS04', 'Python Principles', 3);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('CS05', 'Data Security', 4);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('CS06', 'Data Science', 4);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('MA01', 'Calculus I', 4);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('MA02', 'Calculus II', 4);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('MA03', 'Linear Algebra', 3);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('PH01', 'Introduction to Physics', 3);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('PH02', 'Mechanics', 4);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('BI01', 'Introduction to Biology', 3);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('BI02', 'Biological Principles', 3);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('BI03', 'Evolution', 4);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('MU01', 'Music Theory', 1);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('MU02', 'History of Music', 3);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('MU03', 'Music and Film', 2);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('ST01', 'Statistics Principles', 3);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('ST02', 'Probability', 3);
+INSERT INTO Courses (Course_ID, CName, Credits) Values ('ST03', 'Research in Statistics', 1);
