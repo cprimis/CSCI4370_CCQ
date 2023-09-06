@@ -1,3 +1,14 @@
 /* Make note that you must surround values with quotes in a lot of cases*/
 /* DATE datatypes need to be inclosed in quotes and are in the format of 'YYYY-MM-DD'
+
+/* Students Table Data Values, 10 Values */
 INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1234, 'Austin', 'Jones', '2000-01-01', 'Biology');
+INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1256, 'Bradley', 'Baxter', '2002-02-02', 'Comp. Sci.');
+INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1278, 'Candace', 'Cooper', '2001-05-06', 'Physics');
+INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1290, 'Damien', 'Duncan', '2001-11-20', 'Comp. Sci.');
+INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1212, 'Elena', 'Evans', '2000-07-25', 'Biology');
+INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1201, 'Florence', 'Fisher', '2002-04-02', 'Comp. Sci.');
+INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1203, 'Georgia', 'Green', '2003-08-01', 'Mathematics');
+INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1205, 'Heath', 'Hughes', '2002-08-17', 'Music');
+INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1207, 'Issac', 'Irvine', '2000-06-28', 'Comp. Sci.');
+INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1209, 'Julia', 'Johnson', '2002-02-13', 'Comp. Sci.');
