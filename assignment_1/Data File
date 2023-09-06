@@ -1,1 +1,1 @@
-INSERT INTO students (StudentID, FName, LName, DoB, Major) Values (1234, ‘Austin’, ‘Jones’, 2000-01-01, Biology)
+INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1234, ‘Austin’, ‘Jones’, 2000-01-01, Biology)
