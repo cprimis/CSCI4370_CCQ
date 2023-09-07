@@ -34,3 +34,41 @@ INSERT INTO Courses (Course_ID, CName, Credits) Values ('MU03', 'Music and Film'
 INSERT INTO Courses (Course_ID, CName, Credits) Values ('ST01', 'Statistics Principles', 3);
 INSERT INTO Courses (Course_ID, CName, Credits) Values ('ST02', 'Probability', 3);
 INSERT INTO Courses (Course_ID, CName, Credits) Values ('ST03', 'Research in Statistics', 1);
+
+/* Enrollment Table Data Values, 28 Values */
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1001', '1234', 'BI01', 'A');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1002', '1234', 'BI02', 'B');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1003', '1234', 'BI03', 'A');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1004', '1234', 'CS01', 'A');
+
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1005', '1256', 'CS02', 'F');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1006', '1256', 'CS04', 'B');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1007', '1256', 'CS06', 'A');
+
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1008', '1278', 'PH01', 'A');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1009', '1278', 'PH02', 'B');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1010', '1278', 'ST01', 'A');
+
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1011', '1290', 'CS01', 'A');
+
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1012', '1212', 'BI01', 'A');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1013', '1212', 'BI02', 'D');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1014', '1212', 'BI03', 'F');
+
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1015', '1203', 'MA01', 'A');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1016', '1203', 'MA03', 'A');
+
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1017', '1205', 'MU01', 'B');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1018', '1205', 'MU03', 'B');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1019', '1205', 'CS01', 'A');
+
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1020', '1207', 'CS01', 'A');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1021', '1207', 'CS02', 'A');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1022', '1207', 'MA02', 'F');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1023', '1207', 'ST01', 'A');
+
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1024', '1209', 'CS03', 'A');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1025', '1209', 'MA01', 'B');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1026', '1209', 'PH01', 'C');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1027', '1209', 'CS06', 'A');
+INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1028', '1209', 'ST03', 'A');
