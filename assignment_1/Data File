@@ -92,3 +92,30 @@ INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1115', '
 INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1116', 'Raymond', 'Aguilar', 'Statistics');
 INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1117', 'Greta', 'Stanton', 'Statistics');
 INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1118', 'Russell', 'Donovan', 'Statistics');
+
+/* Teaches Table Data Values, 25 Values */
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1301', '1101', 'CS01');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1302', '1101', 'CS02');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1303', '1101', 'CS04');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1304', '1102', 'CS01');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1305', '1102', 'CS03');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1306', '1103', 'CS06');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1307', '1104', 'CS03');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1308', '1104', 'CS04');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1309', '1105', 'MA01');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1310', '1106', 'MA01');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1311', '1106', 'MA02');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1312', '1107', 'MA03');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1313', '1108', 'PH01');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1314', '1109', 'PH02');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1315', '1110', 'BI01');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1316', '1110', 'BI02');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1317', '1111', 'BI01');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1318', '1111', 'BI02');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1319', '1112', 'BI03');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1320', '1113', 'BI02');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1321', '1114', 'MU01');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1322', '1114', 'MU03');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1323', '1116', 'ST01');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1324', '1116', 'ST02');
+INSERT INTO Teaches (TeachID, ProfessorID, Course_ID) Values ('1325', '1117', 'ST03');
