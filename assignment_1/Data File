@@ -72,3 +72,23 @@ INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1025
 INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1026', '1209', 'PH01', 'C');
 INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1027', '1209', 'CS06', 'A');
 INSERT INTO Enrollment (EnrollmentID, StudentID, Course_ID, grade) Values ('1028', '1209', 'ST03', 'A');
+
+/* Professors Table Data Values, 18 Values */
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1101', 'Omar', 'Diaz', 'Comp. Sci.');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1102', 'Alyssa', 'Todd', 'Comp. Sci.');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1103', 'Emmanuel', 'Connolly', 'Comp. Sci.');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1104', 'Jean', 'Wagner', 'Comp. Sci.');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1105', 'Michael', 'Giles', 'Mathematics');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1106', 'Larry', 'Collier', 'Mathematics');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1107', 'Brian', 'Montes', 'Mathematics');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1108', 'Ruth', 'Ferguson', 'Physics');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1109', 'Connor', 'Jackson', 'Physics');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1110', 'Tobias', 'Curry', 'Biology');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1111', 'Jordan', 'Dunlap', 'Biology');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1112', 'Hudson', 'Wallace', 'Biology');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1113', 'Rebecca', 'Peck', 'Biology');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1114', 'Elizabeth', 'Hayes', 'Music');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1115', 'Leonardo', 'Salazar', 'Music');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1116', 'Raymond', 'Aguilar', 'Statistics');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1117', 'Greta', 'Stanton', 'Statistics');
+INSERT INTO Professors (ProfessorID, FName, LName, department) Values ('1118', 'Russell', 'Donovan', 'Statistics');
