@@ -1,8 +1,19 @@
 /* Make note that you must surround values with quotes in a lot of cases*/
 /* DATE datatypes need to be inclosed in quotes and are in the format of 'YYYY-MM-DD'
 
+/* 
+- Course IDs and names that student with ID 1234 (Austin Adams) has enrolled in: (BI01) Introduction to Biology, (BI02) Biological Principles, (BI03) Evolution, (CS01) Introduction to Computing
+- Students who Major in Comp sci: Bradley Baxter (1256), Damien Duncan (1290), Florence Fisher (1201), Issac Irvine (1207), Julia Johnson (1209)
+- From Comp sci majors, students who got an "F" grade: Bradley Baxter (1256), Issac Irvine (1207)
+- All professors teach courses of more than 2 credits except for Elizabeth Hayes (1114) & Greta Stanton (1117), and professors Leonardo Salazar (1115) & Russell Donovan (1118) who do not teach any courses
+- Student Florence Fisher (1201) is not enrolled in any course
+- Course names and ids that no professor teaches: Data Security (CS05), History of Music (MU02)
+- Professor names and ids who teach comp sci major students: Omar Diaz (1101), Alyssa Todd (1102), Emmanuel Connolly (1103), Jean Wagner (1104), Michael Giles (1105), Larry Collier (1106), Ruth Ferguson (1108), Raymond Aguilar (1116), Greta Stanton (1117)
+(some courses taught by multiple professors, let me know if this ends up being an issue for sql)
+*/
+
 /* Students Table Data Values, 10 Values */
-INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1234, 'Austin', 'Jones', '2000-01-01', 'Biology');
+INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1234, 'Austin', 'Adams', '2000-01-01', 'Biology');
 INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1256, 'Bradley', 'Baxter', '2002-02-02', 'Comp. Sci.');
 INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1278, 'Candace', 'Cooper', '2001-05-06', 'Physics');
 INSERT INTO Students (StudentID, FName, LName, DoB, Major) Values (1290, 'Damien', 'Duncan', '2001-11-20', 'Comp. Sci.');
