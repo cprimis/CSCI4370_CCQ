@@ -9,7 +9,6 @@
 - Student Florence Fisher (1201) is not enrolled in any course
 - Course names and ids that no professor teaches: Data Security (CS05), History of Music (MU02)
 - Professor names and ids who teach comp sci major students: Omar Diaz (1101), Alyssa Todd (1102), Emmanuel Connolly (1103), Jean Wagner (1104), Michael Giles (1105), Larry Collier (1106), Ruth Ferguson (1108), Raymond Aguilar (1116), Greta Stanton (1117)
-(some courses taught by multiple professors, let me know if this ends up being an issue for sql)
 */
 
 /* Students Table Data Values, 10 Values */
