@@ -12,7 +12,7 @@ CREATE TABLE Courses
 (
     CourseID char(4) NOT NULL PRIMARY KEY,
     CName nvarchar(25) NOT NULL ,
-    Credits INT /* */
+    Credits INT
 );
 /*=====================Enrollment table===================*/
 CREATE TABLE Enrollment
@@ -22,8 +22,6 @@ CREATE TABLE Enrollment
 	CourseID char(4),
 	FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
 	FOREIGN KEY (CourseID) REFERENCES Courses(CourseID),
-    /* Add StudentID as a foreign key later*/
-    /* Add CourseID as a foreign key later*/
 	grade nvarchar(30) NOT NULL
 );
 /*=====================Professors table===================*/
@@ -43,24 +41,4 @@ CREATE TABLE Teaches
 	FOREIGN KEY (ProfessorID) REFERENCES Professors(ProfessorID),
 	CourseID char(4),
 	FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
-    /* Add ProfessorID as a foreign key later*/
-    /* Add CourseID as a foreign key later*/
 );
-
-/*===================== Foreign Key===================*/
-/*==========Enrollment=========*/
-/*
-ALTER TABLE Enrollment
-ADD FOREIGN KEY (StudentID) REFERENCES Students(StudentID);
-
-ALTER TABLE Enrollment
-ADD FOREIGN KEY (CourseID) REFERENCES Courses(CourseID);
-*/
-/*=========Teaches===========*/
-/*
-ALTER TABLE Teaches 
-ADD FOREIGN KEY (ProfessorID) REFERENCES Professors(ProfessorID);
-
-ALTER TABLE Teaches 
-ADD FOREIGN KEY (CourseID) REFERENCES Courses(CourseID);
-*/
