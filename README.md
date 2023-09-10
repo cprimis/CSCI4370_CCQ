@@ -10,12 +10,7 @@ University of Georgia CSCI 4370
 ##  Assignment 1 Due September 10th!
 
 
----
-title: MySQL
-updated: 2020-07-05
-layout: 2017/sheet
-category: Databases
----
+# MySQL Cheat Sheet
 
 ### Browsing
 
