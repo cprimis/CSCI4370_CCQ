@@ -12,6 +12,20 @@ University of Georgia CSCI 4370
 
 # MySQL Cheat Sheet
 
+Six basic operators:
+
+•select: σ
+
+•project: ∏
+
+•union: ∪
+
+•set difference:–
+
+•Cartesian product: x
+
+•rename: ρ
+
 ### Browsing
 
 ```sql
