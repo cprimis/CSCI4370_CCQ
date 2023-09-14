@@ -1,4 +1,3 @@
-/*Entity Sets*/
 CREATE TABLE Employee
 (
     employeeID char(4) NOT NULL PRIMARY KEY,
@@ -30,6 +29,8 @@ CREATE TABLE Patient
     patientID char(4) NOT NULL PRIMARY KEY,
     name nvarchar(30) NOT NULL ,
     DoB DATE NOT NULL /* YYYY-MM-DD*/
+    doctorID char(4) NOT NULL ,
+    FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID) , /*attends relationship*/
 );
 
 CREATE TABLE LabTest
@@ -39,8 +40,10 @@ CREATE TABLE LabTest
     type nvarchar(30) NOT NULL ,
     result char(3) NOT NULL ,
     doctorID char(4) ,
+    labtechID char(4) NOT NULL ,
     patientID char(4) ,
     FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID) , /*orders relationship*/
+    FOREIGN KEY (labtechID) REFERENCES LabTechnician(labtechID) , /*performs relationship*/
     FOREIGN KEY (patientID) REFERENCES Patient(patientID) /*receives relationship*/
 );
 
@@ -51,6 +54,10 @@ CREATE TABLE Prescription
     doctor nvarchar(30) NOT NULL ,
     patient nvarchar(30) NOT NULL ,
     amount nvarchar(30) NOT NULL
+    doctorID char(4) NOT NULL ,
+    pharmacistID char(4) NOT NULL ,
+    FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID) , /*prescribes relationship*/
+    FOREIGN KEY (pharmacistID) REFERENCES Pharmacist(pharmacistID) , /*checks relationship*/
 );
 
 CREATE TABLE Medication
@@ -89,7 +96,6 @@ CREATE TABLE Case
 ); 
 
 /*Relationship Sets*/
-specialize
 attends
 prescribes
 checks
