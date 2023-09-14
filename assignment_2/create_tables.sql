@@ -11,7 +11,6 @@ CREATE TABLE Doctor
 (
     doctorID char(4) NOT NULL PRIMARY KEY,
     name nvarchar(30) NOT NULL ,
-    department nvarchar(30) NOT NULL
 );
 
 CREATE TABLE Pharmacist
@@ -64,6 +63,18 @@ CREATE TABLE Medication
     pharmacistID char(4) ,
     FOREIGN KEY (patientID) REFERENCES Patient(patientID) , /*receives relationship*/
     FOREIGN KEY (pharmacistID) REFERENCES Pharmacist(pharmacistID) /*dispense relationship*/
+);
+
+Create TABLE Specialize
+(
+    employeeID char(4) ,
+    doctorID char(4) ,
+    pharmacistID char(4) ,
+    labtechID char(4) ,
+    FOREIGN KEY (employeeID) REFERENCES Employee(employeeID) , 
+    FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID) , 
+    FOREIGN KEY (pharmacistID) REFERENCES Pharmacist(pharmacistID) ,
+    FOREIGN KEY (labtechID) REFERENCES LabTechnician(labtechID) 
 );
 
 CREATE TABLE Case
