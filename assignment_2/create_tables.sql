@@ -38,7 +38,11 @@ CREATE TABLE LabTest
     labtestID char(4) NOT NULL PRIMARY KEY,
     date DATE NOT NULL , /* YYYY-MM-DD*/
     type nvarchar(30) NOT NULL ,
-    result char(3)
+    result char(3) NOT NULL ,
+    doctorID char(4) ,
+    patientID char(4) ,
+    FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID) , /*orders relationship*/
+    FOREIGN KEY (patientID) REFERENCES Patient(patientID) /*receives relationship*/
 );
 
 CREATE TABLE Prescription
@@ -55,8 +59,27 @@ CREATE TABLE Medication
     medicationID char(4) NOT NULL PRIMARY KEY ,
     name nvarchar(30) NOT NULL ,
     dosage nvarchar(30) NOT NULL ,
-    price nvarchar(30) NOT NULL
+    price nvarchar(30) NOT NULL , 
+    patientID char(4) ,
+    pharmacistID char(4) ,
+    FOREIGN KEY (patientID) REFERENCES Patient(patientID) , /*receives relationship*/
+    FOREIGN KEY (pharmacistID) REFERENCES Pharmacist(pharmacistID) /*dispense relationship*/
 );
 
-/*Relationship Sets*/
+CREATE TABLE Case
+(
+    caseID char(4) NOT NULL PRIMARY KEY ,
+    doctorID char(4) ,
+    pharmacistID char(4) ,
+    labtechID char(4) ,
+    FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID) , 
+    FOREIGN KEY (pharmacistID) REFERENCES Pharmacist(pharmacistID) ,
+    FOREIGN KEY (labtechID) REFERENCES LabTechnician(labtechID) 
+); 
 
+/*Relationship Sets*/
+specialize
+attends
+prescribes
+checks
+performs
