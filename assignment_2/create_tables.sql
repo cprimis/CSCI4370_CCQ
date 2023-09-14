@@ -9,7 +9,7 @@ CREATE TABLE Employee
 CREATE TABLE Doctor
 (
     doctorID char(4) NOT NULL PRIMARY KEY,
-    name nvarchar(30) NOT NULL ,
+    name nvarchar(30) NOT NULL
 );
 
 CREATE TABLE Pharmacist
@@ -28,9 +28,9 @@ CREATE TABLE Patient
 (
     patientID char(4) NOT NULL PRIMARY KEY,
     name nvarchar(30) NOT NULL ,
-    DoB DATE NOT NULL /* YYYY-MM-DD*/
+    DoB DATE NOT NULL , /* YYYY-MM-DD*/
     doctorID char(4) NOT NULL ,
-    FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID) , /*attends relationship*/
+    FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID) /*attends relationship*/
 );
 
 CREATE TABLE LabTest
@@ -53,11 +53,11 @@ CREATE TABLE Prescription
     date DATE NOT NULL , /* YYYY-MM-DD*/
     doctor nvarchar(30) NOT NULL ,
     patient nvarchar(30) NOT NULL ,
-    amount nvarchar(30) NOT NULL
+    amount nvarchar(30) NOT NULL , 
     doctorID char(4) NOT NULL ,
     pharmacistID char(4) NOT NULL ,
     FOREIGN KEY (doctorID) REFERENCES Doctor(doctorID) , /*prescribes relationship*/
-    FOREIGN KEY (pharmacistID) REFERENCES Pharmacist(pharmacistID) , /*checks relationship*/
+    FOREIGN KEY (pharmacistID) REFERENCES Pharmacist(pharmacistID) /*checks relationship*/
 );
 
 CREATE TABLE Medication
@@ -84,7 +84,7 @@ Create TABLE Specialize
     FOREIGN KEY (labtechID) REFERENCES LabTechnician(labtechID) 
 );
 
-CREATE TABLE Case
+CREATE TABLE Cases
 (
     caseID char(4) NOT NULL PRIMARY KEY ,
     doctorID char(4) ,
@@ -94,9 +94,3 @@ CREATE TABLE Case
     FOREIGN KEY (pharmacistID) REFERENCES Pharmacist(pharmacistID) ,
     FOREIGN KEY (labtechID) REFERENCES LabTechnician(labtechID) 
 ); 
-
-/*Relationship Sets*/
-attends
-prescribes
-checks
-performs
