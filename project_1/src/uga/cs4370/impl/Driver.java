@@ -18,6 +18,9 @@ public class Driver {
 		Relation r = rb.newRelation("Student", 
 				Arrays.asList("ID", "name", "major"), 
 				Arrays.asList(Type.INTEGER, Type.STRING, Type.STRING));
+		Relation r3 = rb.newRelation("Student", 
+				Arrays.asList("ID", "name", "major"), 
+				Arrays.asList(Type.INTEGER, Type.STRING, Type.STRING));		
 		try {
 			Relation r2 = rb.newRelation("Student", 
 					Arrays.asList("ID1", "name"), 
@@ -83,6 +86,7 @@ public class Driver {
 		List<Cell> t4 = Arrays.asList(c10,c11,c12);
 		List<Cell> t5 = Arrays.asList(c13,c14,c15);
 		List<Cell> t6 = Arrays.asList(c16,c17,c18);
+		List<Cell> t7 = Arrays.asList(c4,c8,c12);		
 		r.insert(t1);
 		r.print();
 		r.insert(t2);
@@ -90,11 +94,15 @@ public class Driver {
 		r.insert(t4);
 		r.insert(t5);		
 		r.insert(t6);
+		r.insert(t7);
+		List<List<Cell>> copy_of_r = r.getRows();
+		
 		r.insert(c19,c20,c21);
 		r.insert(c22,c23,c24);
 		r.insert(c25,c26,c27);
 		r.insert(c28,c29,c30);
 		r.insert(c31,c32,c33);
+		r.insert(c31,c32,c30);
 		try {
 			r.insert(c34,c35,c36);
 		} catch(Exception e) {
@@ -102,6 +110,11 @@ public class Driver {
 		} // try
 
 		r.print();
+		System.out.println(copy_of_r.toString());
+		for(List<Cell> row_of_r : copy_of_r) {
+			r3.insert(row_of_r);
+		}
+		r3.print();
 		
 	} // main
 } // Driver
