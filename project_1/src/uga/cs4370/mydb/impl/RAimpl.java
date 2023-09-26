@@ -30,8 +30,40 @@ public class RAimpl implements RA {
      */
     @Override
     public Relation project(Relation rel, List<String> attrs) {
-        // TODO Auto-generated method stub
-        return null;
+        RelationBuilder rb = new RelationBuilderImpl();
+        
+        // check if attrs are in rel and get indices
+        int colIndex[] = new int[attrs.size()];
+        try {
+            for (int i = 0; i < attrs.size(); i++) {
+                colIndex[i] = rel.getAttrIndex(attrs.get(i)); // check if this gets thrown
+            }
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Attribute does not exist in this relation");
+        }
+        
+        // get types of attrs
+        List<Type> types = Arrays.asList();
+        for (int i = 0; i < colIndex.length; i++) {
+            types.add(rel.getTypes().get(colIndex[i]));
+        }
+        
+        
+        Relation relNew = rb.newRelation(rel.getName(), 
+                attrs,  
+                types);
+        
+        // add rows
+        for (int i = 0; i < rel.getSize(); i++) {
+            List<Cell> row = Arrays.asList();
+            
+            for (int j = 0; j < rel.getAttrs().size(); j++) {
+                row.add(rel.getRows().get(i).get(j));
+            }
+            relNew.insert(row);
+        }
+        
+        return relNew;
     }
 
     /**
@@ -48,7 +80,7 @@ public class RAimpl implements RA {
     }
 
     /**
-     * Performs the set difference operaion on the relations rel1 and rel2.
+     * Performs the set difference operation on the relations rel1 and rel2.
      * 
      * @return The resulting relation after applying the set difference operation.
      * 
@@ -91,7 +123,11 @@ public class RAimpl implements RA {
                 attrs,  
                 rel.getTypes());
         
-        relNew.insertAll(rel.getRows());
+        List<List<Cell>> cells = rel.getRows();
+        // add rows
+        for (int i = 0; i < rel.getSize(); i++) {
+            relNew.insert(cells.get(i));
+        }
         
         return relNew;
     }
@@ -115,8 +151,41 @@ public class RAimpl implements RA {
      */
     @Override
     public Relation join(Relation rel1, Relation rel2) {
-        // TODO Auto-generated method stub
-        return null;
+        // Get common attrs between rel1 and rel2
+        List<String> comAttrs = Arrays.asList();
+        for (int i = 0; i < rel1.getAttrs().size(); i++) {
+            if (rel1.hasAttr(rel2.getAttrs().get(i))) {
+                comAttrs.add(rel2.getAttrs().get(i));
+            }
+        }
+        
+        if (comAttrs.size() == 0) {
+            throw new IllegalArgumentException("No common attributes");
+        }
+
+        // Concat attrs and types
+        String name = rel1.getName() + " join " +rel2.getName();
+        List<String> attrs = Arrays.asList(); 
+        List<Type> types = Arrays.asList(); 
+        attrs.addAll(rel1.getAttrs());
+        types.addAll(rel1.getTypes());
+        
+        for (int i = 0; i < rel2.getAttrs().size(); i++) {
+            if (!attrs.contains(rel2.getAttrs().get(i))) {
+                attrs.add(rel2.getAttrs().get(i));
+                types.add(rel2.getTypes().get(i));
+            }
+        }
+        
+        // Inner join rows
+        for (int i = 0; i < comAttrs.size(); i++) {
+            
+        }
+        
+        RelationBuilder rb = new RelationBuilderImpl();
+        Relation relNew = rb.newRelation(name, attrs, types);
+        
+        return relNew;
     }
 
     /**
