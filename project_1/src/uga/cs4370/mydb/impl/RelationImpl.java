@@ -1,7 +1,12 @@
 package uga.cs4370.mydb.impl;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-import uga.cs4370.mydb.*;
+import uga.cs4370.mydb.Cell;
+import uga.cs4370.mydb.Relation;
+import uga.cs4370.mydb.Type;
 
 
 public class RelationImpl implements Relation {
@@ -9,6 +14,7 @@ public class RelationImpl implements Relation {
 	
 	String relation_name;
 	List<String> relation_attrs;
+	List<Integer> relation_attrs_max_word_length;
 	List<Type> relation_type;
 	List<List<Cell>> relation_cells;
 	
@@ -16,6 +22,10 @@ public class RelationImpl implements Relation {
 		this.relation_name = name;
 		this.relation_attrs = attrs;
 		this.relation_type = types;
+		this.relation_cells = new ArrayList<>();
+		this.relation_attrs_max_word_length = IntStream.of(new int[attrs.size()])
+												.boxed()
+												.collect(Collectors.toList());
 	} // RelationImpl
 
     /**
@@ -33,7 +43,7 @@ public class RelationImpl implements Relation {
 	public int getSize() {
 		return this.relation_attrs.size();
 	} // getSize
-
+	
     /**
      * Get the rows of the relation.
      * Return a deep copy of the rows to avoid 
@@ -41,8 +51,11 @@ public class RelationImpl implements Relation {
      */
 	@Override
 	public List<List<Cell>> getRows() {
-		// TODO implement method
-		return null;
+		List<List<Cell>> deep_copy = new ArrayList<>();
+		for (List<Cell> row_i : this.relation_cells) {
+			deep_copy.add(new ArrayList<>(row_i));
+		} // for
+		return deep_copy;
 	} // getRows
 
     /**
@@ -60,6 +73,16 @@ public class RelationImpl implements Relation {
 	public List<String> getAttrs() {
 		return this.relation_attrs;
 	} // getAttrs
+	
+	/*
+	 * NOTE THIS IS NOT ACCESSIBLE FROM THE RELATIONAL OBJECT, YOU CAN ONLY ACCESS IT HERE OR FROM A RELATIONALIMPL OBJECT
+	 */
+	public void setAttrs(List<String> new_attrs) {
+		if(new_attrs.size() != this.relation_attrs.size()) {
+			throw new IllegalArgumentException("attributes must be the same length in order to be replaced");
+		}
+		this.relation_attrs = new_attrs;
+	} // setAttrs
 
     /**
      * Returns true only if attr exist in the relation.
@@ -88,6 +111,18 @@ public class RelationImpl implements Relation {
 		throw new IllegalArgumentException("Attribute does not exist in this relation");
 	} // getAttrIndex
 
+	/**
+	 * Checks if every value in a boolean array are true, if not returns false
+	 * 
+	 */
+	private static boolean allTrue (boolean[] values) {
+	    for (boolean value : values) {
+	        if (!value)
+	            return false;
+	    }
+	    return true;
+	} // allTrue
+	
     /**
      * Inserts a row in the relation.
      * 
@@ -96,11 +131,43 @@ public class RelationImpl implements Relation {
      */	
 	@Override
 	public void insert(Cell... cells) {
-		// TODO Auto-generated method stub
+		List<Cell> cells_to_list = new ArrayList<>();
 		
-		for(Cell cell_i : cells) {
+		for(int i = 0 ; i < cells.length && i < relation_attrs.size() ; i++) {
+			try {
+				if(this.relation_type.get(i) == Type.INTEGER) {
+					cells[i].getAsInt();
+				}
+				if(this.relation_type.get(i) == Type.DOUBLE) {
+					cells[i].getAsDouble();
+				}
+				if(this.relation_type.get(i) == Type.STRING) {
+					cells[i].getAsString();
+				}
+			} catch(RuntimeException rte) {
+				throw new IllegalArgumentException("The Cell type does not correspond with the attribute type of the relation");
+			} // try
 			
+			if(cells[i].toString().length() > this.relation_attrs_max_word_length.get(i)) {
+				this.relation_attrs_max_word_length.set(i, cells[i].toString().length());
+			} // if
+			cells_to_list.add(cells[i]);
 		} // for
+		boolean[] matches_another_row = new boolean[cells.length];
+		for (List<Cell> row_i : relation_cells) {
+			for(int i = 0 ; i < row_i.size() && i < cells.length ; i++) {
+				if(row_i.get(i).equals(cells[i])) {
+					matches_another_row[i] = true;
+				} // if
+			} // for
+			if(allTrue(matches_another_row)){
+				throw new IllegalArgumentException("This row of records matches another row completely. Please rechecks and resubmit.");
+			} // if
+			matches_another_row = new boolean[cells.length];
+		} // for
+
+		
+		this.relation_cells.add(cells_to_list);
 	} // insert
 
     /**
@@ -111,23 +178,40 @@ public class RelationImpl implements Relation {
      */	
 	@Override
 	public void insert(List<Cell> cells) {
-		// TODO Auto-generated method stub
-		int index = 0;
-		for(Cell cell_i : cells) {
-			if( relation_type.get(index) != cell_i.;
+		for(int i = 0 ; i < cells.size() && i < relation_attrs.size() ; i++) {
+			try {
+				if(this.relation_type.get(i) == Type.INTEGER) {
+					cells.get(i).getAsInt();
+				}
+				if(this.relation_type.get(i) == Type.DOUBLE) {
+					cells.get(i).getAsDouble();
+				}
+				if(this.relation_type.get(i) == Type.STRING) {
+					cells.get(i).getAsString();
+				}
+			} catch(RuntimeException rte) {
+				throw new IllegalArgumentException("The Cell type does not correspond with the attribute type of the relation");
+			} // try
+			if(cells.get(i).toString().length() > this.relation_attrs_max_word_length.get(i)) {
+				this.relation_attrs_max_word_length.set(i, cells.get(i).toString().length());
+			} // if
 		} // for
+		boolean[] matches_another_row = new boolean[cells.size()];
+		for (List<Cell> row_i : relation_cells) {
+			for(int i = 0 ; i < row_i.size() && i < cells.size() ; i++) {
+				if(row_i.get(i).equals(cells.get(i))) {
+					matches_another_row[i] = true;
+				} // if
+			} // for
+			if(allTrue(matches_another_row)){
+				throw new IllegalArgumentException("This row of records matches another row completely. Please rechecks and resubmit.");
+			} // if
+			matches_another_row = new boolean[cells.size()];
+		} // for
+		
+		this.relation_cells.add(cells);
+		
 	} // insert
-
-    /**
-     * Inserts all of the rows in a relation into another relation.
-     * 
-     * @throws IllegalArgumentException if the cell types do not correspond 
-     * to the attribute types of the relation or if the row already exists.
-     */ 
-    public void insertAll(List<List<Cell>> cells) {
-        // TODO Auto-generated method stub
-    } // insert
-	
 
     /**
      * Print the relation properly formatted as a table 
@@ -136,7 +220,36 @@ public class RelationImpl implements Relation {
      */	
 	@Override
 	public void print() {
-		// TODO Auto-generated method stub
-	}
+
+		System.out.print("+");
+		for(Integer print_len : relation_attrs_max_word_length) {
+			System.out.print("-".repeat(print_len) + "+");
+		} // for
+		System.out.print("\n|");
+		for(int i = 0; i < relation_attrs_max_word_length.size() && i < relation_attrs.size(); i++) {
+			int buffer_needed = relation_attrs_max_word_length.get(i) - relation_attrs.get(i).length();
+			System.out.print(relation_attrs.get(i) + " ".repeat(buffer_needed) + "|");
+		} // for
+		System.out.print("\n+");		
+		for(Integer print_len : relation_attrs_max_word_length) {
+			System.out.print("-".repeat(print_len) + "+");
+		} // for
+		
+		for (List<Cell> row_i : relation_cells) {
+			System.out.print("\n|");
+			for(int i = 0; i < row_i.size(); i++) {
+				int buffer_needed = relation_attrs_max_word_length.get(i) - row_i.get(i).toString().length();
+				System.out.print(row_i.get(i).toString() + " ".repeat(buffer_needed) + "|");
+			} // for
+		} // for
+		System.out.print("\n+");
+		for(Integer print_len : relation_attrs_max_word_length) {
+			System.out.print("-".repeat(print_len) + "+");
+		} // for
+		System.out.print("\n");
+		
+	} // print
+	
+
 
 } // RelationImpl
