@@ -119,6 +119,17 @@ public class RelationImpl implements Relation {
 	} // insert
 
     /**
+     * Inserts all of the rows in a relation into another relation.
+     * 
+     * @throws IllegalArgumentException if the cell types do not correspond 
+     * to the attribute types of the relation or if the row already exists.
+     */ 
+    public void insertAll(List<List<Cell>> cells) {
+        // TODO Auto-generated method stub
+    } // insert
+	
+
+    /**
      * Print the relation properly formatted as a table 
      * to the standard output.
      * The result should look similar to MySql table outputs.
