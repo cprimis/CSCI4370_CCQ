@@ -866,7 +866,10 @@ public class Driver {
 		};
 		
 		Relation selecttest1 = ra.select(stu, predex);
-		selecttest1.print();
+		List<String> courseID_attr = Arrays.asList("CourseID");
+		Relation finalQ1 = ra.project(selecttest1, courseID_attr);
+		System.out.println("Retrieve all course IDs a student with ID 1234 has enrolled in: ");
+		finalQ1.print();
 
 		//Q2 Select Predicate
 		Predicate predex2 = new Predicate() {
@@ -880,9 +883,9 @@ public class Driver {
 		};
 		
 		Relation selecttest2 = ra.select(stu, predex2);
-		selecttest2.print();
-
-		Relation projecttest2 = ra.project(stu, Arrays.asList("FName","LName","StudentID"));
+		//selecttest2.print();
+		Relation projecttest2 = ra.project(selecttest2, Arrays.asList("FName","LName","StudentID"));
+		System.out.println("All student names and ids who major in computer science: ");
 		projecttest2.print();
 		
 	} // main
