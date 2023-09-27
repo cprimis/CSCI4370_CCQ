@@ -116,8 +116,22 @@ public class RAimpl implements RA {
      */
     @Override
     public Relation diff(Relation rel1, Relation rel2) {
-        // TODO Auto-generated method stub
-        return null;
+        if ((rel1.getAttrs() != rel2.getAttrs()) | rel1.getTypes() != rel2.getTypes()) {
+            throw new IllegalArgumentException("The relations are not compatible");
+        }
+        
+        RelationBuilder rb = new RelationBuilderImpl();
+        Relation relNew = rb.newRelation(rel1.getName(), 
+                rel1.getAttrs(),  
+                rel1.getTypes());
+        
+        for (int i = 0; i < rel1.getSize(); i++) {
+            if (!rel2.getRows().contains(rel1.getRows().get(i))) {
+                relNew.insert(rel1.getRows().get(i));
+            }
+        }
+        
+        return relNew;
     }
 
     /**
