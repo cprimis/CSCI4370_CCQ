@@ -44,7 +44,8 @@ public class RelationImpl implements Relation {
      */	
 	@Override
 	public int getSize() {
-		return this.relation_attrs.size();
+		//return this.relation_attrs.size();
+		return this.getRows().size();
 	} // getSize
 	
     /**
