@@ -1,4 +1,5 @@
 package uga.cs4370.mydb.impl;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,9 +24,11 @@ public class RelationImpl implements Relation {
 		this.relation_attrs = attrs;
 		this.relation_type = types;
 		this.relation_cells = new ArrayList<>();
-		this.relation_attrs_max_word_length = IntStream.of(new int[attrs.size()])
-												.boxed()
-												.collect(Collectors.toList());
+		this.relation_attrs_max_word_length = new ArrayList<>();
+		for(int i = 0 ; i < this.relation_attrs.size() ; i++ ) {
+			this.relation_attrs_max_word_length.add(attrs.get(i).length());
+		} // for
+
 	} // RelationImpl
 
     /**
