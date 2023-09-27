@@ -82,7 +82,7 @@ public class RAimpl implements RA {
      */
     @Override
     public Relation union(Relation rel1, Relation rel2) {
-        if ((rel1.getAttrs() != rel2.getAttrs()) | rel1.getTypes() != rel2.getTypes()) {
+        if (!rel1.getAttrs().equals(rel2.getAttrs()) | !rel1.getTypes().equals(rel2.getTypes())) {
             throw new IllegalArgumentException("The relations are not compatible");
         }
         
@@ -115,7 +115,7 @@ public class RAimpl implements RA {
      */
     @Override
     public Relation diff(Relation rel1, Relation rel2) {
-        if ((rel1.getAttrs() != rel2.getAttrs()) | rel1.getTypes() != rel2.getTypes()) {
+        if (!rel1.getAttrs().equals(rel2.getAttrs()) | !rel1.getTypes().equals(rel2.getTypes())) {
             throw new IllegalArgumentException("The relations are not compatible");
         }
         
