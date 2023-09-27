@@ -118,6 +118,30 @@ public class Driver {
 		System.out.println(r3.getAttrs());
 		
 //		r3.setAttrs(Arrays.asList("NOT_ID", "NOT_name", "NOT_major"));
+
+		// assignment 1 dataset test
+		Relation stu = rb.newRelation("Students", 
+				Arrays.asList("StudentID", "FName", "LName", "DoB", "Major"), 
+				Arrays.asList(Type.INTEGER, Type.STRING, Type.STRING, Type.STRING, Type.STRING));
+
+		Cell s11 = new Cell(1234);
+		Cell s12 = new Cell("Austin");
+		Cell s13 = new Cell("Adams");
+		Cell s14 = new Cell("2000-01-01");
+		Cell s15 = new Cell("Biology");
+		
+		Cell s21 = new Cell(1256);
+		Cell s22 = new Cell("Bradley");
+		Cell s23 = new Cell("Baxter");
+		Cell s24 = new Cell("2002-02-02");
+		Cell s25 = new Cell("Comp. Sci");
+
+		List<Cell> sl1 = Arrays.asList(s11,s12,s13,s14,s15);
+		List<Cell> sl2 = Arrays.asList(s21,s22,s23,s24,s25);
+		stu.insert(sl1);
+		stu.insert(sl2);
+		stu.insert(s11,s12,s13,s14,s15);
+		stu.print();
 		
 	} // main
 } // Driver
