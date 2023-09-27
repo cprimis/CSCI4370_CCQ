@@ -849,7 +849,38 @@ public class Driver {
 		tea.insert(tl24);
 		
 		tea.print();
+
+
+		// Questions Implementation
+		RA ra = new RAimpl();
 		
+		//Q1 Select Predicate
+		Predicate predex = new Predicate() {
+			@Override
+			public boolean check(List<Cell> row) {
+				int idIndex = stu.getAttrIndex("StudentID");
+				Cell idCell = row.get(idIndex);
+				int idValue = (Integer) idCell.getAsInt();
+				return idValue == 1234;
+			}
+		};
+		
+		Relation selecttest1 = ra.select(stu, predex);
+		selecttest1.print();
+
+		//Q2 Select Predicate
+		Predicate predex2 = new Predicate() {
+			@Override
+			public boolean check(List<Cell> row) {
+				int idIndex = stu.getAttrIndex("Major");
+				Cell idCell = row.get(idIndex);
+				String idValue = idCell.getAsString();
+				return idValue == "Comp. Sci.";
+			}
+		};
+		
+		Relation selecttest2 = ra.select(stu, predex2);
+		selecttest2.print();
 		
 	} // main
 } // Driver
