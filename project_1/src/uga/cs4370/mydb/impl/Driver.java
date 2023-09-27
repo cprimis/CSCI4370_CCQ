@@ -881,6 +881,9 @@ public class Driver {
 		
 		Relation selecttest2 = ra.select(stu, predex2);
 		selecttest2.print();
+
+		Relation projecttest2 = ra.project(stu, Arrays.asList("FName","LName","StudentID"));
+		projecttest2.print();
 		
 	} // main
 } // Driver
