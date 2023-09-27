@@ -13,7 +13,7 @@ public class Driver {
 		
 
 
-
+		/**
 		RelationBuilder rb = new RelationBuilderImpl();
 		Relation r = rb.newRelation("Student", 
 				Arrays.asList("ID", "name", "major"), 
@@ -118,9 +118,12 @@ public class Driver {
 		System.out.println(r3.getAttrs());
 		
 //		r3.setAttrs(Arrays.asList("NOT_ID", "NOT_name", "NOT_major"));
-
+		**/
+		
 		// **************** //
 		// Data Tables //
+
+		RelationBuilder rb = new RelationBuilderImpl();
 		
 		// students datatable
 		Relation stu = rb.newRelation("Students", 
@@ -138,7 +141,7 @@ public class Driver {
 		Cell s12 = new Cell("Bradley");
 		Cell s13 = new Cell("Baxter");
 		Cell s14 = new Cell("2002-02-02");
-		Cell s15 = new Cell("Comp. Sci");
+		Cell s15 = new Cell("Comp. Sci.");
 		
 		Cell s21 = new Cell(1278);
 		Cell s22 = new Cell("Candace");
@@ -150,7 +153,7 @@ public class Driver {
 		Cell s32 = new Cell("Damien");
 		Cell s33 = new Cell("Duncan");
 		Cell s34 = new Cell("2001-11-20");
-		Cell s35 = new Cell("Comp. Sci");
+		Cell s35 = new Cell("Comp. Sci.");
 		
 		Cell s41 = new Cell(1212);
 		Cell s42 = new Cell("Elena");
@@ -180,13 +183,13 @@ public class Driver {
 		Cell s82 = new Cell("Issac");
 		Cell s83 = new Cell("Irvine");
 		Cell s84 = new Cell("2000-06-28");
-		Cell s85 = new Cell("Comp. Sci");
+		Cell s85 = new Cell("Comp. Sci.");
 		
 		Cell s91 = new Cell(1209);
 		Cell s92 = new Cell("Julia");
 		Cell s93 = new Cell("Johnson");
 		Cell s94 = new Cell("2002-02-13");
-		Cell s95 = new Cell("Comp. Sci");
+		Cell s95 = new Cell("Comp. Sci.");
 		
 		List<Cell> sl0 = Arrays.asList(s01,s02,s03,s04,s05);
 		List<Cell> sl1 = Arrays.asList(s11,s12,s13,s14,s15);
