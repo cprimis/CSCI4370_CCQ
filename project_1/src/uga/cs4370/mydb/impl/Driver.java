@@ -858,14 +858,14 @@ public class Driver {
 		Predicate predex = new Predicate() {
 			@Override
 			public boolean check(List<Cell> row) {
-				int idIndex = stu.getAttrIndex("StudentID");
+				int idIndex = enr.getAttrIndex("StudentID");
 				Cell idCell = row.get(idIndex);
 				int idValue = (Integer) idCell.getAsInt();
 				return idValue == 1234;
 			}
 		};
 		
-		Relation selecttest1 = ra.select(stu, predex);
+		Relation selecttest1 = ra.select(enr, predex);
 		List<String> courseID_attr = Arrays.asList("CourseID");
 		Relation finalQ1 = ra.project(selecttest1, courseID_attr);
 		System.out.println("Retrieve all course IDs a student with ID 1234 has enrolled in: ");
