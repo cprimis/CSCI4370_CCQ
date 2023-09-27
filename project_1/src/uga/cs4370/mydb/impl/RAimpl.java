@@ -267,8 +267,51 @@ public class RAimpl implements RA {
      */
     @Override
     public Relation join(Relation rel1, Relation rel2, Predicate p) {
-        // TODO Auto-generated method stub
-        return null;
+        // Get common attrs between rel1 and rel2
+        List<String> comAttrs = Arrays.asList();
+        for (int i = 0; i < rel1.getAttrs().size(); i++) {
+            if (rel1.hasAttr(rel2.getAttrs().get(i))) {
+                comAttrs.add(rel2.getAttrs().get(i));
+            }
+        }
+
+        if (comAttrs.size() == 0) {
+            throw new IllegalArgumentException("No common attributes");
+        }
+
+        // Concat attrs and types
+        String name = rel1.getName() + " join " + rel2.getName();
+        List<String> attrs = Arrays.asList();
+        List<Type> types = Arrays.asList();
+        attrs.addAll(rel1.getAttrs());
+        types.addAll(rel1.getTypes());
+
+        for (int i = 0; i < rel2.getAttrs().size(); i++) {
+            if (!attrs.contains(rel2.getAttrs().get(i))) {
+                attrs.add(rel2.getAttrs().get(i));
+                types.add(rel2.getTypes().get(i));
+            }
+        }
+
+        // Theta join rows based on the predicate
+        RelationBuilder rb = new RelationBuilderImpl();
+        Relation relNew = rb.newRelation(name, attrs, types);
+
+        for (List<Cell> row1 : rel1.getRows()) {
+            for (List<Cell> row2 : rel2.getRows()) {
+                // Combine rows from both relations
+                List<Cell> combinedRow = new Arrays.asList(row1);
+                combinedRow.addAll(row2);
+
+                // Check if the combined row satisfies the predicate
+                if (p.check(combinedRow)) {
+                    // If it does, insert it into the joinedRelation
+                    relNew.insert(combinedRow);
+                }
+            }
+        }
+    return relNew;
+             
     }
 
 }
