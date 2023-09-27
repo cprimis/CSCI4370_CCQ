@@ -75,8 +75,28 @@ public class RAimpl implements RA {
      */
     @Override
     public Relation union(Relation rel1, Relation rel2) {
-        // TODO Auto-generated method stub
-        return null;
+        if ((rel1.getAttrs() != rel2.getAttrs()) | rel1.getTypes() != rel2.getTypes()) {
+            throw new IllegalArgumentException("The relations are not compatible");
+        }
+        
+        RelationBuilder rb = new RelationBuilderImpl();
+        Relation relNew = rb.newRelation(rel1.getName(), 
+                rel1.getAttrs(),  
+                rel1.getTypes());
+        
+        // add rows from rel1
+        for (int i = 0; i < rel1.getSize(); i++) {
+            relNew.insert(rel1.getRows().get(i));
+        }
+        
+        // add rows from re2
+        for (int i = 0; i < rel2.getSize(); i++) {
+            if (!relNew.getRows().contains(rel2.getRows().get(i))) {
+                relNew.insert(rel2.getRows().get(i));
+            }
+        }
+        
+        return relNew;
     }
 
     /**
