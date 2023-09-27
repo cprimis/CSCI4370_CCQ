@@ -182,8 +182,38 @@ public class RAimpl implements RA {
      * @throws IllegalArgumentException if rel1 and rel2 have common attibutes.
      */
     public Relation cartesianProduct(Relation rel1, Relation rel2) {
-        // TODO Auto-generated method stub
-        return null;
+        for (int i = 0; i < rel1.getAttrs().size(); i++) {
+            if (rel2.hasAttr(rel1.getAttrs().get(i))) {
+                throw new IllegalArgumentException("Relations have common attributes");
+            }
+        }
+        
+        
+        String name = rel1.getName() + " x " +rel2.getName();
+        List<String> attrs = Arrays.asList(); 
+        List<Type> types = Arrays.asList(); 
+        attrs.addAll(rel1.getAttrs());
+        attrs.addAll(rel2.getAttrs());
+        types.addAll(rel1.getTypes());
+        types.addAll(rel2.getTypes());
+        
+        RelationBuilder rb = new RelationBuilderImpl();
+        Relation relNew = rb.newRelation(name, 
+                attrs,  
+                types);
+        
+        for (int i = 0; i < rel1.getSize(); i++) {
+            for (int j = 0; j < rel2.getSize(); j++) {
+                List<Cell> row = Arrays.asList();
+                
+                row.addAll(rel1.getRows().get(i));
+                row.addAll(rel1.getRows().get(j)); 
+                
+                relNew.insert(row);
+            }
+        }
+        
+        return relNew;
     }
 
     /**
