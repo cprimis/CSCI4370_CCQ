@@ -2,6 +2,7 @@ package uga.cs4370.mydb.impl;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
 import uga.cs4370.mydb.*;
 
@@ -61,7 +62,7 @@ public class RAimpl implements RA {
                 types);
         
         // add rows
-        for (int i = 0; i <= rel.getSize(); i++) {
+        for (int i = 0; i < rel.getSize(); i++) {
             List<Cell> row = new ArrayList<Cell>();    
             
             for (int j = 0; j < colIndex.length; j++) {
@@ -187,10 +188,9 @@ public class RAimpl implements RA {
             }
         }
         
-        
         String name = rel1.getName() + " x " +rel2.getName();
-        List<String> attrs = Arrays.asList(); 
-        List<Type> types = Arrays.asList(); 
+        List<String> attrs = new ArrayList<String>();
+        List<Type> types = new ArrayList<Type>();
         attrs.addAll(rel1.getAttrs());
         attrs.addAll(rel2.getAttrs());
         types.addAll(rel1.getTypes());
@@ -203,10 +203,10 @@ public class RAimpl implements RA {
         
         for (int i = 0; i < rel1.getSize(); i++) {
             for (int j = 0; j < rel2.getSize(); j++) {
-                List<Cell> row = Arrays.asList();
+                List<Cell> row = new ArrayList<Cell>();
                 
                 row.addAll(rel1.getRows().get(i));
-                row.addAll(rel1.getRows().get(j)); 
+                row.addAll(rel2.getRows().get(j)); 
                 
                 relNew.insert(row);
             }
@@ -216,7 +216,7 @@ public class RAimpl implements RA {
     }
 
     /**
-     * Peforms natural join on relations rel1 and rel2.
+     * Performs natural join on relations rel1 and rel2.
      * 
      * @return The resulting relation after applying natural join.
      */
@@ -224,9 +224,13 @@ public class RAimpl implements RA {
     public Relation join(Relation rel1, Relation rel2) {
         // Get common attrs between rel1 and rel2
         List<String> comAttrs = Arrays.asList();
+        List<Integer> rel1Index = Arrays.asList();
+        List<Integer> rel2Index = Arrays.asList();
         for (int i = 0; i < rel1.getAttrs().size(); i++) {
-            if (rel1.hasAttr(rel2.getAttrs().get(i))) {
-                comAttrs.add(rel2.getAttrs().get(i));
+            if (rel2.hasAttr(rel1.getAttrs().get(i))) {
+                comAttrs.add(rel1.getAttrs().get(i));
+                rel1Index.add(i);
+                rel2Index.add(rel2.getAttrIndex(rel1.getAttrs().get(i)));
             }
         }
         
@@ -249,8 +253,12 @@ public class RAimpl implements RA {
         }
         
         // Inner join rows
-        for (int i = 0; i < comAttrs.size(); i++) {
+        for (int i = 0; i < rel1.getSize(); i++) {
+            boolean inBoth;
             
+            for (int j = 0; j < comAttrs.size(); j++) {
+                ?
+            }
         }
         
         RelationBuilder rb = new RelationBuilderImpl();
@@ -309,8 +317,6 @@ public class RAimpl implements RA {
                 }
             }
         }
-    return relNew;
-             
+        return relNew;        
     }
-
 }
