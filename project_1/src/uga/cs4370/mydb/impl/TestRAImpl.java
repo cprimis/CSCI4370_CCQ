@@ -63,8 +63,28 @@ public class Driver {
         test2.insert(t6);
         test2.insert(t7);   
         
+        Relation cou = rb.newRelation("Courses", 
+                Arrays.asList("CourseID", "CName", "Credits"), 
+                Arrays.asList(Type.STRING, Type.STRING, Type.INTEGER));
+        
+        //courses data
+        Cell c001 = new Cell("CS01");
+        Cell c002 = new Cell("Introduction to Computing");
+        Cell c003 = new Cell(3);
+        
+        Cell c011 = new Cell("CS02");
+        Cell c012 = new Cell("Software Development");
+        Cell c013 = new Cell(4);
+        
+        List<Cell> cl00 = Arrays.asList(c001,c002,c003);
+        List<Cell> cl01 = Arrays.asList(c011,c012,c013);
+        
+        cou.insert(cl00);
+        cou.insert(cl01);
+        
         test.print();
         test2.print();
+        cou.print();
         //------------------------------------------------------------
         RA ra = new RAimpl();
         
@@ -85,6 +105,10 @@ public class Driver {
         // rename
         test2 = ra.rename(test2, Arrays.asList("ID"), Arrays.asList("StudentID"));
         test2.print();
+        
+        // cartesianProduct
+        Relation carttest = ra.cartesianProduct(cou, test2);
+        carttest.print();
         
     } // main
 } // Driver
