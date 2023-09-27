@@ -20,7 +20,7 @@ public class RAimpl implements RA {
         Relation relNew = rb.newRelation(rel.getName(), rel.getAttrs(), rel.getTypes());
 
         for (List<Cell> row : rel.getRows()) {
-            if (p.test(row)) {
+            if (p.check(row)) {
                 relNew.insert(row);
             }
         }
