@@ -866,8 +866,7 @@ public class Driver {
 		};
 		
 		Relation selecttest1 = ra.select(enr, predex);
-		List<String> courseID_attr = Arrays.asList("CourseID");
-		Relation finalQ1 = ra.project(selecttest1, courseID_attr);
+		Relation finalQ1 = ra.project(selecttest1, Arrays.asList("CourseID"));
 		System.out.println("Retrieve all course IDs a student with ID 1234 has enrolled in: ");
 		finalQ1.print();
 
