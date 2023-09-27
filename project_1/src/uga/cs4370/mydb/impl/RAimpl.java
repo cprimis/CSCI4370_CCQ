@@ -15,8 +15,16 @@ public class RAimpl implements RA {
      */
     @Override
     public Relation select(Relation rel, Predicate p) {
-        // TODO Auto-generated method stub
-        return null;
+        RelationBuilder rb = new RelationBuilderImpl();
+
+        Relation ewlNew = rb.newRelation(rel.getName(), rel.getAttrs(), rel.getTypes());
+
+        for (List<Cell> row : rel.getRows()) {
+            if (p.test(row)) {
+                relNew.insert(row);
+            }
+        }
+        return relNew;
     }
 
     /**
