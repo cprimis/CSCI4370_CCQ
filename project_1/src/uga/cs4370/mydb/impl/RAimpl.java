@@ -17,7 +17,7 @@ public class RAimpl implements RA {
     public Relation select(Relation rel, Predicate p) {
         RelationBuilder rb = new RelationBuilderImpl();
 
-        Relation ewlNew = rb.newRelation(rel.getName(), rel.getAttrs(), rel.getTypes());
+        Relation relNew = rb.newRelation(rel.getName(), rel.getAttrs(), rel.getTypes());
 
         for (List<Cell> row : rel.getRows()) {
             if (p.test(row)) {
