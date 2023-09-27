@@ -50,23 +50,22 @@ public class RAimpl implements RA {
             throw new IllegalArgumentException("Attribute does not exist in this relation");
         }
         
-        // get types of attrs
-        List<Type> types = Arrays.asList();
+        // get types of attrs        
+        List<Type> types = new ArrayList<Type>();    
         for (int i = 0; i < colIndex.length; i++) {
-            types.add(rel.getTypes().get(colIndex[i]));
+            types.add(rel.getTypes().get(colIndex[i]));  
         }
-        
         
         Relation relNew = rb.newRelation(rel.getName(), 
                 attrs,  
                 types);
         
         // add rows
-        for (int i = 0; i < rel.getSize(); i++) {
-            List<Cell> row = Arrays.asList();
+        for (int i = 0; i <= rel.getSize(); i++) {
+            List<Cell> row = new ArrayList<Cell>();    
             
-            for (int j = 0; j < rel.getAttrs().size(); j++) {
-                row.add(rel.getRows().get(i).get(j));
+            for (int j = 0; j < colIndex.length; j++) {
+                row.add(rel.getRows().get(i).get(colIndex[j]));
             }
             relNew.insert(row);
         }
