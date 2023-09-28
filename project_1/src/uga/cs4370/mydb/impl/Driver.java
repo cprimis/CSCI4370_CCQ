@@ -827,7 +827,7 @@ public class Driver {
 		Predicate predex5 = new Predicate() {
 			@Override
 			public boolean check(List<Cell> row) {
-				int idIndex = enr.getAttrIndex("StudentID");
+				int idIndex = stu.getAttrIndex("StudentID");
 				Cell idCell = row.get(idIndex);
 				int idValue = (Integer) idCell.getAsInt();
 
