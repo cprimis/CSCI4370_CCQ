@@ -817,7 +817,6 @@ public class Driver {
 		};
 						
 		Relation selecttest4 = ra.select(jointest42, predex4);
-		selecttest4.print();
 					
 		Relation finalQ4 = ra.project(selecttest4, Arrays.asList("FName","LName","ProfessorID"));
 		System.out.println("List of professor names and IDs who teach courses of more than 2 credits");
