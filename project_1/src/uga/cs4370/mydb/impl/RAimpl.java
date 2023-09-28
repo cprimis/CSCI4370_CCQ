@@ -335,7 +335,7 @@ public class RAimpl implements RA {
     @Override
     public Relation join(Relation rel1, Relation rel2, Predicate p) {
         // Get common attrs between rel1 and rel2
-        List<String> comAttrs = Arrays.asList();
+        List<String> comAttrs = new ArrayList<String>();
         for (int i = 0; i < rel1.getAttrs().size(); i++) {
             if (rel1.hasAttr(rel2.getAttrs().get(i))) {
                 comAttrs.add(rel2.getAttrs().get(i));
@@ -348,8 +348,8 @@ public class RAimpl implements RA {
 
         // Concat attrs and types
         String name = rel1.getName() + " join " + rel2.getName();
-        List<String> attrs = Arrays.asList();
-        List<Type> types = Arrays.asList();
+        List<String> attrs = new ArrayList<String>();
+        List<Type> types = new ArrayList<Type>();
         attrs.addAll(rel1.getAttrs());
         types.addAll(rel1.getTypes());
 
@@ -367,8 +367,8 @@ public class RAimpl implements RA {
         for (List<Cell> row1 : rel1.getRows()) {
             for (List<Cell> row2 : rel2.getRows()) {
                 // Combine rows from both relations
-                List<Cell> combinedRow = Arrays.asList();
-                combinedRow.addAll(row1);
+                List<Cell> combinedRow = row1; // check
+                
                 combinedRow.addAll(row2);
 
                 // Check if the combined row satisfies the predicate
@@ -378,6 +378,6 @@ public class RAimpl implements RA {
                 }
             }
         }
-        return relNew;        
+        return relNew;         
     }
 }
