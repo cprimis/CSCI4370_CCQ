@@ -887,6 +887,25 @@ public class Driver {
 		Relation projecttest2 = ra.project(selecttest2, Arrays.asList("FName","LName","StudentID"));
 		System.out.println("All student names and ids who major in computer science: ");
 		projecttest2.print();
+
+		//Q3 Select Predicate
+		Predicate predex3 = new Predicate() {
+			@Override
+			public boolean check(List<Cell> row) {
+				int idIndex = enr.getAttrIndex("StudentID");
+				Cell idCell = row.get(idIndex);
+				int idValue = (Integer) idCell.getAsInt();
+				return idValue == 1234;
+			}
+		};
+		
+		Relation jointest3 = ra.join(cou, enr);
+		jointest3.print();
+		Relation selecttest3 = ra.select(jointest3, predex3);
+		//selecttest3.print();
+		Relation finalQ3 = ra.project(selecttest3, Arrays.asList("CName"));
+		System.out.println("Retrieve all course names a student with ID 1234 has enrolled in: ");
+		finalQ3.print();
 		
 		// Q7 
 		Predicate predex7 = new Predicate() {
