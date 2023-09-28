@@ -318,7 +318,8 @@ public class RAimpl implements RA {
         for (List<Cell> row1 : rel1.getRows()) {
             for (List<Cell> row2 : rel2.getRows()) {
                 // Combine rows from both relations
-                List<Cell> combinedRow = new Arrays.asList(row1);
+                List<Cell> combinedRow = Arrays.asList();
+                combinedRow.addAll(row1);
                 combinedRow.addAll(row2);
 
                 // Check if the combined row satisfies the predicate
