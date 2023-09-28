@@ -948,16 +948,16 @@ public class Driver {
                 			int enrollmentIDIndex = enr.getAttrIndex("StudentID");
                				Cell enrollmentIDCell = enrollmentRow.get(enrollmentIDIndex);
                 			int enrollmentIDValue = (Integer) enrollmentIDCell.getAsInt();
-                			return studentIDValue == enrollmentIDValue;
-            			    });
-    				}
-			};
+                			return idValue == enrollmentIDValue;
+            			});
+    			}
+		};
 
-			Relation studentsNotEnrolled = ra.select(students, predexQ5);
-			List<String> studentAttrNames = Arrays.asList("StudentID", "FName", "LName");
-			Relation finalQ5 = ra.project(studentsNotEnrolled, studentAttrNames);
-			System.out.println("Students who have not enrolled in any course: ");
-			finalQ5.print();
+		Relation studentsNotEnrolled = ra.select(stu, predex5);
+		List<String> studentAttrNames = Arrays.asList("StudentID", "FName", "LName");
+		Relation final5 = ra.project(studentsNotEnrolled, studentAttrNames);
+		System.out.println("Students who have not enrolled in any course: ");
+		finalQ5.print();
 
 		// Q6
 		Relation nat_join_q6 = ra.join(cou, tea);
