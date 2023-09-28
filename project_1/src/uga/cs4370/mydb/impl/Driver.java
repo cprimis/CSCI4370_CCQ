@@ -866,7 +866,8 @@ public class Driver {
 		};
 		
 		Relation selecttest1 = ra.select(enr, predex);
-		Relation finalQ1 = ra.project(selecttest1, Arrays.asList("CourseID"));
+		List<String> courseID_attr = Arrays.asList("CourseID");
+		Relation finalQ1 = ra.project(selecttest1, courseID_attr);
 		System.out.println("Retrieve all course IDs a student with ID 1234 has enrolled in: ");
 		finalQ1.print();
 
@@ -886,6 +887,49 @@ public class Driver {
 		Relation projecttest2 = ra.project(selecttest2, Arrays.asList("FName","LName","StudentID"));
 		System.out.println("All student names and ids who major in computer science: ");
 		projecttest2.print();
+		
+		// Q7 
+		Predicate predex7 = new Predicate() {
+			@Override
+			public boolean check(List<Cell> row) {
+				int majorIndex = stu.getAttrIndex("Major");
+				int gradeIndex = enr.getAttrIndex("Grade");
+				Cell majorCell = row.get(majorIndex);
+				Cell gradeCell = row.get(gradeIndex);
+				String majorValue = majorCell.getAsString();
+				String gradeValue = gradeCell.getAsString();
+				return majorValue == "Comp. Sci." && gradeValue == "F";
+			}
+		};
+		
+		Relation nat_join_q7 = ra.join(stu,enr);
+		Relation selecttest7 = ra.select(nat_join_q7, predex7);
+		//selecttest2.print();
+		Relation projecttest7 = ra.project(selecttest7, Arrays.asList("FName","LName","StudentID"));
+		System.out.println("All student names and their IDs who major in computer science who got an 'F': ");
+		projecttest7.print();
+		
+		// Q8
+		Predicate predex8 = new Predicate() {
+			@Override
+			public boolean check(List<Cell> row) {
+				int idIndex = stu.getAttrIndex("Major");
+				Cell idCell = row.get(idIndex);
+				String idValue = idCell.getAsString();
+				return idValue == "Comp. Sci.";
+			}
+		};	
+
+		// Select Comp. Sci Majors from Students
+		Relation selecttest8a = ra.select(stu, predex8);
+		// Natural Join Comp. Sci Majors with Teaches
+		Relation nat_join_q8a = ra.join(selecttest8a,tea);
+		// Natural Join (Comp. Sci Majors with Teaches) with Professors
+		Relation nat_join_q8b = ra.join(nat_join_q8a,pro);
+		Relation projecttest8 = ra.project(nat_join_q8b, Arrays.asList("FName","LName","ProfessorID"));
+		System.out.println("All student names and their IDs who major in computer science who got an 'F': ");
+		projecttest8.print();
+		
 		
 	} // main
 } // Driver
