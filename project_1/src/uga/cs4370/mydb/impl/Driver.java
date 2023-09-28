@@ -888,6 +888,52 @@ public class Driver {
 		System.out.println("Q2: All student names and ids who major in computer science: ");
 		projecttest2.print();
 
+		//Q3
+		Predicate predex3 = new Predicate() {
+			@Override
+			public boolean check(List<Cell> row) {
+				int idIndex = enr.getAttrIndex("StudentID");
+				Cell idCell = row.get(idIndex);
+	
+				int idValue = (Integer) idCell.getAsInt();
+				return idValue == 1234;
+			}
+		};
+		
+		Relation jointest3 = ra.join(cou, enr);
+		jointest3.print();
+		System.out.println(jointest3.getTypes());
+		
+		Relation selecttest3 = ra.select(jointest3, predex3);
+		//selecttest3.print();
+			
+		Relation finalQ3 = ra.project(selecttest3, Arrays.asList("CName"));
+		System.out.println("Retrieve all course names a student with ID 1234 has enrolled in: ");
+		finalQ3.print();
+		
+		//Q4 
+		Predicate predex4 = new Predicate() {
+			@Override
+			public boolean check(List<Cell> row) {
+				int idIndex = enr.getAttrIndex("Credits");
+				Cell idCell = row.get(idIndex);
+				int idValue = (Integer) idCell.getAsInt();
+				return idValue > 2;
+			}
+		};
+						
+		Relation jointest41 = ra.join(pro, tea);
+		Relation jointest42 = ra.join(jointest41, cou);
+		jointest41.print();
+		jointest42.print();
+				
+		Relation selecttest4 = ra.select(jointest42, predex4);
+		//selecttest4.print();
+					
+		Relation finalQ4 = ra.project(selecttest4, Arrays.asList("FName","LName","ProfessorID"));
+		System.out.println("List of professor names and IDs who teach courses of more than 2 credits");
+		finalQ4.print();
+		
 		
 		//Q5
 		Predicate predex5 = new Predicate() {
