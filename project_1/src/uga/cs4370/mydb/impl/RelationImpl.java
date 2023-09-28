@@ -2,8 +2,6 @@ package uga.cs4370.mydb.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import uga.cs4370.mydb.Cell;
 import uga.cs4370.mydb.Relation;
