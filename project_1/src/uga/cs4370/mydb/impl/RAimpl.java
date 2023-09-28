@@ -224,9 +224,13 @@ public class RAimpl implements RA {
     public Relation join(Relation rel1, Relation rel2) {
         // Get common attrs between rel1 and rel2
         List<String> comAttrs = new ArrayList<String>();
+        List<Integer> rel1Index = new ArrayList<Integer>();
+        List<Integer> rel2Index = new ArrayList<Integer>();
         for (int i = 0; i < rel1.getAttrs().size(); i++) {
             if (rel2.hasAttr(rel1.getAttrs().get(i))) {
                 comAttrs.add(rel1.getAttrs().get(i));
+                rel1Index.add(i);
+                rel2Index.add(rel2.getAttrIndex(rel1.getAttrs().get(i)));
             }
         }
         
@@ -258,22 +262,64 @@ public class RAimpl implements RA {
         RelationBuilder rb = new RelationBuilderImpl();
         Relation relNew = rb.newRelation(name, attrs, types);
         
-        Relation rel1Com = project(rel1, comAttrs);
-        Relation rel2Com = project(rel2, comAttrs);
-        Relation rel2NotCom = project(rel2, notComAttrs);
-        
-        // Inner join rows
+        // compare rel2 to rel1
         for (int i = 0; i < rel1.getSize(); i++) {
             for (int j = 0; j < rel2.getSize(); j++) {
-                if (rel1Com.getRows().get(i).equals(rel2Com.getRows().get(j))) {
+                List<Cell> row1 = new ArrayList<Cell>();
+                for (int k = 0; k < rel1Index.size(); k++) {
+                    row1.add(rel1.getRows().get(i).get(rel1Index.get(k)));
+                }
+                List<Cell> row2 = new ArrayList<Cell>();
+                for (int k = 0; k < rel2Index.size(); k++) {
+                    row2.add(rel2.getRows().get(j).get(rel2Index.get(k)));
+                }
+                
+                if (row1.equals(row2)) {
                     List<Cell> row = new ArrayList<Cell>();
                     row.addAll(rel1.getRows().get(i));
-                    row.addAll(rel2NotCom.getRows().get(j));
-                    
-                    relNew.insert(row);
+                    for (int k = 0; k < rel2.getAttrs().size(); k++) {
+                        if (!rel2Index.contains(k)) {
+                            row.add(rel2.getRows().get(j).get(k));
+                        }
+                    }
+                    try {
+                        relNew.insert(row);
+                    } catch (IllegalArgumentException e) {
+                        
+                    }
                 }
             }
-        }        
+        }
+            
+        // compare rel1 to rel2
+        for (int i = 0; i < rel2.getSize(); i++) {
+            for (int j = 0; j < rel1.getSize(); j++) {
+                List<Cell> row2 = new ArrayList<Cell>();
+                for (int k = 0; k < rel2Index.size(); k++) {
+                    row2.add(rel2.getRows().get(i).get(rel2Index.get(k)));
+                }
+                List<Cell> row1 = new ArrayList<Cell>();
+                for (int k = 0; k < rel1Index.size(); k++) {
+                    row1.add(rel1.getRows().get(j).get(rel1Index.get(k)));
+                }
+                
+                if (row2.equals(row1)) {
+                    List<Cell> row = new ArrayList<Cell>();
+                    row.addAll(rel1.getRows().get(j));
+                    for (int k = 0; k < rel2.getAttrs().size(); k++) {
+                        if (!rel2Index.contains(k)) {
+                            row.add(rel2.getRows().get(i).get(k));
+                        }
+                    }
+                    
+                    try {
+                        relNew.insert(row);
+                    } catch (IllegalArgumentException e) {
+                        
+                    }
+                }
+            }
+        }
         
         return relNew;
     }
