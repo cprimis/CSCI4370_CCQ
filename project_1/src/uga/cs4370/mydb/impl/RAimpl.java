@@ -223,25 +223,28 @@ public class RAimpl implements RA {
     @Override
     public Relation join(Relation rel1, Relation rel2) {
         // Get common attrs between rel1 and rel2
-        List<String> comAttrs = Arrays.asList();
-        List<Integer> rel1Index = Arrays.asList();
-        List<Integer> rel2Index = Arrays.asList();
+        List<String> comAttrs = new ArrayList<String>();
         for (int i = 0; i < rel1.getAttrs().size(); i++) {
             if (rel2.hasAttr(rel1.getAttrs().get(i))) {
                 comAttrs.add(rel1.getAttrs().get(i));
-                rel1Index.add(i);
-                rel2Index.add(rel2.getAttrIndex(rel1.getAttrs().get(i)));
             }
         }
         
         if (comAttrs.size() == 0) {
             throw new IllegalArgumentException("No common attributes");
         }
+        
+        List<String> notComAttrs = new ArrayList<String>();
+        for (int i = 0; i < rel2.getAttrs().size(); i++) {
+            if (!comAttrs.contains(rel2.getAttrs().get(i))) {
+                notComAttrs.add(rel2.getAttrs().get(i));
+            }
+        }
 
         // Concat attrs and types
         String name = rel1.getName() + " join " +rel2.getName();
-        List<String> attrs = Arrays.asList(); 
-        List<Type> types = Arrays.asList(); 
+        List<String> attrs = new ArrayList<String>(); 
+        List<Type> types = new ArrayList<Type>(); 
         attrs.addAll(rel1.getAttrs());
         types.addAll(rel1.getTypes());
         
@@ -252,17 +255,25 @@ public class RAimpl implements RA {
             }
         }
         
-        // Inner join rows
-        for (int i = 0; i < rel1.getSize(); i++) {
-            boolean inBoth;
-            
-            for (int j = 0; j < comAttrs.size(); j++) {
-                ?
-            }
-        }
-        
         RelationBuilder rb = new RelationBuilderImpl();
         Relation relNew = rb.newRelation(name, attrs, types);
+        
+        Relation rel1Com = project(rel1, comAttrs);
+        Relation rel2Com = project(rel2, comAttrs);
+        Relation rel2NotCom = project(rel2, notComAttrs);
+        
+        // Inner join rows
+        for (int i = 0; i < rel1.getSize(); i++) {
+            for (int j = 0; j < rel2.getSize(); j++) {
+                if (rel1Com.getRows().get(i).equals(rel2Com.getRows().get(j))) {
+                    List<Cell> row = new ArrayList<Cell>();
+                    row.addAll(rel1.getRows().get(i));
+                    row.addAll(rel2NotCom.getRows().get(j));
+                    
+                    relNew.insert(row);
+                }
+            }
+        }        
         
         return relNew;
     }
