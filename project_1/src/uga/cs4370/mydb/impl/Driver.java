@@ -888,6 +888,31 @@ public class Driver {
 		System.out.println("Q2: All student names and ids who major in computer science: ");
 		projecttest2.print();
 
+		
+		//Q5
+		Predicate predex5 = new Predicate() {
+			@Override
+			public boolean check(List<Cell> row) {
+				int idIndex = enr.getAttrIndex("StudentID");
+				Cell idCell = row.get(idIndex);
+				int idValue = (Integer) idCell.getAsInt();
+
+				return !enr.getRows().stream()
+            			   .anyMatch(enrollmentRow -> {
+                			int enrollmentIDIndex = enr.getAttrIndex("StudentID");
+               				Cell enrollmentIDCell = enrollmentRow.get(enrollmentIDIndex);
+                			int enrollmentIDValue = (Integer) enrollmentIDCell.getAsInt();
+                			return studentIDValue == enrollmentIDValue;
+            			    });
+    				}
+			};
+
+			Relation studentsNotEnrolled = ra.select(students, predexQ5);
+			List<String> studentAttrNames = Arrays.asList("StudentID", "FName", "LName");
+			Relation finalQ5 = ra.project(studentsNotEnrolled, studentAttrNames);
+			System.out.println("Students who have not enrolled in any course: ");
+			finalQ5.print();
+
 		// Q6
 		Relation nat_join_q6 = ra.join(cou, tea);
 	        nat_join_q6.print();
