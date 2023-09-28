@@ -843,7 +843,7 @@ public class Driver {
 
 		Relation studentsNotEnrolled = ra.select(stu, predex5);
 		List<String> studentAttrNames = Arrays.asList("StudentID", "FName", "LName");
-		Relation final5 = ra.project(studentsNotEnrolled, studentAttrNames);
+		Relation finalQ5 = ra.project(studentsNotEnrolled, studentAttrNames);
 		System.out.println("Students who have not enrolled in any course: ");
 		finalQ5.print();
 
