@@ -38,8 +38,7 @@ public class RAimpl implements RA {
      */
     @Override
     public Relation project(Relation rel, List<String> attrs) {
-        RelationBuilder rb = new RelationBuilderImpl();
-        
+                
         // check if attrs are in rel and get indices
         int colIndex[] = new int[attrs.size()];
         try {
@@ -67,7 +66,12 @@ public class RAimpl implements RA {
             for (int j = 0; j < colIndex.length; j++) {
                 row.add(rel.getRows().get(i).get(colIndex[j]));
             }
-            relNew.insert(row);
+            
+            try {
+                relNew.insert(row);
+            } catch (IllegalArgumentException e) {
+                
+            }
         }
         
         return relNew;
