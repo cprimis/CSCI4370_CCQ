@@ -889,23 +889,21 @@ public class Driver {
 		projecttest2.print();
 
 		//Q3
+		Relation jointest3 = ra.join(cou, enr);
+		jointest3.print(); 
+		
 		Predicate predex3 = new Predicate() {
 			@Override
 			public boolean check(List<Cell> row) {
-				int idIndex = enr.getAttrIndex("StudentID");
+				int idIndex = jointest3.getAttrIndex("StudentID");
 				Cell idCell = row.get(idIndex);
-	
+				System.out.println(idCell);
 				int idValue = (Integer) idCell.getAsInt();
 				return idValue == 1234;
 			}
 		};
 		
-		Relation jointest3 = ra.join(cou, enr);
-		jointest3.print();
-		System.out.println(jointest3.getTypes());
-		
 		Relation selecttest3 = ra.select(jointest3, predex3);
-		//selecttest3.print();
 			
 		Relation finalQ3 = ra.project(selecttest3, Arrays.asList("CName"));
 		System.out.println("Retrieve all course names a student with ID 1234 has enrolled in: ");
