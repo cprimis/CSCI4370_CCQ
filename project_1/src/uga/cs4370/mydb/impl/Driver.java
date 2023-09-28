@@ -887,6 +887,17 @@ public class Driver {
 		Relation projecttest2 = ra.project(selecttest2, Arrays.asList("FName","LName","StudentID"));
 		System.out.println("Q2: All student names and ids who major in computer science: ");
 		projecttest2.print();
+
+		// Q6
+		Relation nat_join_q6 = ra.join(cou, tea);
+	        nat_join_q6.print();
+	        List<String> projecttest6 = Arrays.asList("CName", "CourseID");
+	        Relation project6a = ra.project(nat_join_q6, projecttest6);
+	        Relation project6b = ra.project(cou, projecttest6);
+	        Relation final6 = ra.diff(project6b, project6a);
+	        
+	        System.out.println("Q6: Course names and IDs that no professor teaches: ");
+	        final6.print();
 	
 		// Q7 
 		Predicate predex7a = new Predicate() {
