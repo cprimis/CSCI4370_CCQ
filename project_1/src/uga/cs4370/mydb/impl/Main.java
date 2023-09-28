@@ -303,6 +303,8 @@ public class Main {
         nattest.print();
         
         // theta join
-        
+        System.out.println("Theta join");
+        Relation thetajoin = ra.join(stu1, stu2, Arrays.asList("StudentID"));
+        thetajoin.print();
     }
 }
