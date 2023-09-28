@@ -38,7 +38,8 @@ public class RAimpl implements RA {
      */
     @Override
     public Relation project(Relation rel, List<String> attrs) {
-                
+        RelationBuilder rb = new RelationBuilderImpl();
+        
         // check if attrs are in rel and get indices
         int colIndex[] = new int[attrs.size()];
         try {
