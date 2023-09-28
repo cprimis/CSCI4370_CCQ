@@ -908,25 +908,25 @@ public class Driver {
 		Relation finalQ3 = ra.project(selecttest3, Arrays.asList("CName"));
 		System.out.println("Retrieve all course names a student with ID 1234 has enrolled in: ");
 		finalQ3.print();
+
+		// Q4
+		Relation jointest41 = ra.join(pro, tea);
+		Relation jointest42 = ra.join(jointest41, cou);
+		jointest41.print();
+		jointest42.print();
 		
-		//Q4 
 		Predicate predex4 = new Predicate() {
 			@Override
 			public boolean check(List<Cell> row) {
-				int idIndex = enr.getAttrIndex("Credits");
+				int idIndex = jointest42.getAttrIndex("Credits");
 				Cell idCell = row.get(idIndex);
 				int idValue = (Integer) idCell.getAsInt();
 				return idValue > 2;
 			}
 		};
 						
-		Relation jointest41 = ra.join(pro, tea);
-		Relation jointest42 = ra.join(jointest41, cou);
-		jointest41.print();
-		jointest42.print();
-				
 		Relation selecttest4 = ra.select(jointest42, predex4);
-		//selecttest4.print();
+		selecttest4.print();
 					
 		Relation finalQ4 = ra.project(selecttest4, Arrays.asList("FName","LName","ProfessorID"));
 		System.out.println("List of professor names and IDs who teach courses of more than 2 credits");
