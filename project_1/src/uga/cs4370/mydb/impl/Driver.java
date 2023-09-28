@@ -854,7 +854,7 @@ public class Driver {
 		// Questions Implementation
 		RA ra = new RAimpl();
 		
-		//Q1
+		//Q1 Select Predicate
 		Predicate predex = new Predicate() {
 			@Override
 			public boolean check(List<Cell> row) {
@@ -868,10 +868,10 @@ public class Driver {
 		Relation selecttest1 = ra.select(enr, predex);
 		List<String> courseID_attr = Arrays.asList("CourseID");
 		Relation finalQ1 = ra.project(selecttest1, courseID_attr);
-		System.out.println("Retrieve all course IDs a student with ID 1234 has enrolled in: ");
+		System.out.println("Q1: Retrieve all course IDs a student with ID 1234 has enrolled in: ");
 		finalQ1.print();
 
-		//Q2
+		//Q2 Select Predicate
 		Predicate predex2 = new Predicate() {
 			@Override
 			public boolean check(List<Cell> row) {
@@ -885,73 +885,37 @@ public class Driver {
 		Relation selecttest2 = ra.select(stu, predex2);
 		//selecttest2.print();
 		Relation projecttest2 = ra.project(selecttest2, Arrays.asList("FName","LName","StudentID"));
-		System.out.println("All student names and ids who major in computer science: ");
+		System.out.println("Q2: All student names and ids who major in computer science: ");
 		projecttest2.print();
-
-		//Q3
-		Predicate predex3 = new Predicate() {
-			@Override
-			public boolean check(List<Cell> row) {
-				int idIndex = enr.getAttrIndex("StudentID");
-				Cell idCell = row.get(idIndex);
-				int idValue = (Integer) idCell.getAsInt();
-				return idValue == 1234;
-			}
-		};
-		
-		Relation jointest3 = ra.join(cou, enr);
-		jointest3.print();
-		Relation selecttest3 = ra.select(jointest3, predex3);
-		//selecttest3.print();
-		Relation finalQ3 = ra.project(selecttest3, Arrays.asList("CName"));
-		System.out.println("Retrieve all course names a student with ID 1234 has enrolled in: ");
-		finalQ3.print();
-
-		//Q4
-		Predicate predex4 = new Predicate() {
-			@Override
-			public boolean check(List<Cell> row) {
-				int idIndex = enr.getAttrIndex("Credits");
-				Cell idCell = row.get(idIndex);
-				int idValue = (Integer) idCell.getAsInt();
-				return idValue > 2;
-			}
-		};
-						
-		Relation jointest41 = ra.join(pro, tea);
-		Relation jointest42 = ra.join(jointest41, cou);
-		jointest41.print();
-		jointest42.print();
-				
-		Relation selecttest4 = ra.select(jointest42, predex4);
-		//selecttest4.print();
-					
-		Relation finalQ4 = ra.project(selecttest4, Arrays.asList("FName","LName","ProfessorID"));
-		System.out.println("List of professor names and IDs who teach courses of more than 2 credits");
-		finalQ4.print();
-		
+	
 		// Q7 
-		Predicate predex7 = new Predicate() {
+		Predicate predex7a = new Predicate() {
 			@Override
 			public boolean check(List<Cell> row) {
-				int majorIndex = stu.getAttrIndex("Major");
-				int gradeIndex = enr.getAttrIndex("Grade");
-				Cell majorCell = row.get(majorIndex);
-				Cell gradeCell = row.get(gradeIndex);
-				String majorValue = majorCell.getAsString();
-				String gradeValue = gradeCell.getAsString();
-				return majorValue == "Comp. Sci." && gradeValue == "F";
+				int idIndex = stu.getAttrIndex("Major");
+				Cell idCell = row.get(idIndex);
+				String idValue = idCell.getAsString();
+				return idValue == "Comp. Sci.";
 			}
 		};
-		
 		Relation nat_join_q7 = ra.join(stu,enr);
-		Relation selecttest7 = ra.select(nat_join_q7, predex7);
-		//selecttest2.print();
-		Relation projecttest7 = ra.project(selecttest7, Arrays.asList("FName","LName","StudentID"));
-		System.out.println("All student names and their IDs who major in computer science who got an 'F': ");
+		Relation selecttest7a = ra.select(nat_join_q7, predex7a);
+		Predicate predex7b = new Predicate() {
+			@Override
+			public boolean check(List<Cell> row) {
+				int idIndex = selecttest7a.getAttrIndex("grade");
+				Cell idCell = row.get(idIndex);
+				String idValue = idCell.getAsString();
+				return idValue == "F";
+			}
+		};
+		Relation selecttest7b = ra.select(selecttest7a, predex7b);		
+		Relation projecttest7 = ra.project(selecttest7b, Arrays.asList("FName","LName","StudentID"));
+		System.out.println("Q7: All student names and their IDs who major in computer science who got an 'F': ");
 		projecttest7.print();
 		
 		// Q8
+		System.out.println("Q8");
 		Predicate predex8 = new Predicate() {
 			@Override
 			public boolean check(List<Cell> row) {
@@ -962,16 +926,16 @@ public class Driver {
 			}
 		};	
 
-		// Select Comp. Sci Majors from Students
-		Relation selecttest8a = ra.select(stu, predex8);
-		// Natural Join Comp. Sci Majors with Teaches
-		Relation nat_join_q8a = ra.join(selecttest8a,tea);
-		// Natural Join (Comp. Sci Majors with Teaches) with Professors
-		Relation nat_join_q8b = ra.join(nat_join_q8a,pro);
-		Relation projecttest8 = ra.project(nat_join_q8b, Arrays.asList("FName","LName","ProfessorID"));
-		System.out.println("All student names and their IDs who major in computer science who got an 'F': ");
-		projecttest8.print();
-		
+		// Select Comp. Sci Majors from Students and natural join on enrollment
+		Relation nat_join_q8a = ra.join(ra.select(stu, predex8),enr);
+		Relation nat_join_q8b = ra.join(ra.join(pro,tea),enr);
+		Relation project_q8a = ra.project(nat_join_q8b, Arrays.asList("ProfessorID","FName","LName","EnrollmentID"));
+		Relation project_q8b = ra.project(nat_join_q8a, Arrays.asList("Major","EnrollmentID"));
+		Relation nat_join_q8c = ra.join(project_q8b,project_q8a);
+		Relation project_q8c = ra.project(nat_join_q8c, Arrays.asList("FName","LName","ProfessorID","EnrollmentID"));		
+		System.out.println("Q8: Professor names and their IDs who teach students doing computer science major.");
+		project_q8c.print();
+
 		
 	} // main
 } // Driver
