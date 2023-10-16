@@ -75,7 +75,7 @@ INSERT INTO `Movie` VALUES
 ('74','Braveheart','1995','8.4','178','Biography'),
 ('75','Toy Story','1995','8.3','81','Animation'),
 ('76','Coco','2017','8.4','105','Animation'),
-('77','Das Boot','1981','8.4','Nan','Drama'),
+('77','Das Boot','1981','8.4','149','Drama'),
 ('78','Inglourious Basterds','2009','8.3','153','Adventure'),
 ('79','Mononoke-hime','1997','8.4','134','Animation'),
 ('80','Avengers: Endgame','2019','8.4','181','Action'),
