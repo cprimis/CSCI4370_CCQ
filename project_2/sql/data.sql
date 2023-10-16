@@ -3363,7 +3363,7 @@ INSERT INTO `Movie_Actors` VALUES
 ('tt8579674','nm5121393'),
 ('tt8579674','nm4078775');
 
-INSERT INTO `Movies_Directors` VALUES
+INSERT INTO `Movie_Directors` VALUES
 ('The Shawshank Redemption','nm0001104'),
 ('The Godfather','nm0000338'),
 ('The Dark Knight','nm0634240'),
@@ -3670,7 +3670,6 @@ INSERT INTO `Ratings` VALUES
 (20,'Amy Jacobson','moviesgalor','Vertigo','8.8','This makes my mind spin');
 
 INSERT INTO `Movie` VALUES
-('rank','movie_name','year','imdb_rating','duration','genre'),
 ('1','The Shawshank Redemption','1994','9.3','142','Drama'),
 ('2','The Godfather','1972','9.2','175','Crime'),
 ('3','The Dark Knight','2008','9','152','Action'),
