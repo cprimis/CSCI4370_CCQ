@@ -816,5 +816,3 @@ INSERT INTO `director` VALUES
 ('nm0000277','Richard Attenborough'),
 ('nm0853238','Tate Taylor'),
 ('nm0873779,nm0936374','Gary Trousdale, Kirk Wise');
-
-INSERT INTO `User` VALUES
