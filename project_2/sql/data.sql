@@ -3669,7 +3669,7 @@ INSERT INTO `Ratings` VALUES
 (19,'Javier Hurst','kubrickfan','2001: A Space Odyssey','9.1','Kubrick''s mind is insane'),
 (20,'Amy Jacobson','moviesgalor','Vertigo','8.8','This makes my mind spin');
 
-INSERT INTO `Movies` VALUES
+INSERT INTO `Movie` VALUES
 ('rank','movie_name','year','imdb_rating','duration','genre'),
 ('1','The Shawshank Redemption','1994','9.3','142','Drama'),
 ('2','The Godfather','1972','9.2','175','Crime'),
