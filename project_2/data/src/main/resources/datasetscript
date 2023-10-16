@@ -1,21 +1,23 @@
 CREATE TABLE `movie` (
     `rank`  BIGINT PRIMARY KEY,
-    `movie_id` VARCHAR(1024),
-    `movie_name` VARCHAR(1024),
+    `movie_id` VARCHAR(255),
+    `movie_name` VARCHAR(255),
     `year` BIGINT,
-    `imdb_rating` VARCHAR(1024),
-    `duration` VARCHAR(1024),
-    `genre` VARCHAR(1024)
+    `imdb_rating` VARCHAR(255),
+    `duration` VARCHAR(255),
+    `genre` VARCHAR(255)
 );
 
 CREATE TABLE `cast` (
     `cast_id` VARCHAR(255) PRIMARY KEY,
-    `cast_name` VARCHAR(1024)
+    `cast_name` VARCHAR(255),
+    `number_of_movies` INT
 );
 
 CREATE TABLE `director` (
     `director_id` VARCHAR(255),
-    `director_name` VARCHAR(1024)
+    `director_name` VARCHAR(255),
+    `number_of_movies` INT
 );
 
 CREATE TABLE `user` (
@@ -23,7 +25,7 @@ CREATE TABLE `user` (
     `name` VARCHAR(255),
     `age` INT,
     `rating` INT,
-    `review` VARCHAR(1024),
+    `review` VARCHAR(255),
     `rating_id` INT,  
     `rank` BIGINT
 );
