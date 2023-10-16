@@ -3,7 +3,7 @@ DROP DATABASE Project_2 IF EXISTS;
 CREATE DATABASE Project_2;
 USE Project_2;
 
-DROP TABLE Movies IF EXISTS;
+DROP TABLE Movie IF EXISTS;
 DROP TABLE Directors IF EXISTS;
 DROP TABLE Actors IF EXISTS;
 DROP TABLE Movies_Directors IF EXISTS;
@@ -36,7 +36,7 @@ CREATE TABLE `Movie_Actors` (
   FOREIGN KEY (`cast_id`) REFERENCES `Actors`(`cast_id`)
 );
 
-CREATE TABLE `Movies_Directors` (
+CREATE TABLE `Movie_Directors` (
   `movie_name` VARCHAR(255),
   `director_id` VARCHAR(255),
   FOREIGN KEY (`movie_name`) REFERENCES `Movie`(`movie_name`),
