@@ -1,4 +1,4 @@
-﻿rank,movie_id,movie_name,year,imdb_rating,duration,genre
+﻿rank,movie_id,movie_name,release_year,imdb_rating,duration,genre
 1,tt0111161,The Shawshank Redemption,1994,9.3,142,Drama
 2,tt0068646,The Godfather,1972,9.2,175,Crime
 3,tt0468569,The Dark Knight,2008,9,152,Action
