@@ -25,41 +25,41 @@ CREATE TABLE `user` (
     `rating` INT,
     `review` VARCHAR(1024),
     `rating_id` INT,  
-    `imdb_rating` VARCHAR(255),
-    FOREIGN KEY (`rating_id`) REFERENCES `ratings` (`rating_id`),
-    FOREIGN KEY (`imdb_rating`) REFERENCES `movie` (`imdb_rating`)
+    `rank` BIGINT
 );
-
 
 CREATE TABLE `ratings` (
   `rating_id` INT AUTO_INCREMENT PRIMARY KEY,
-  `movie_id` VARCHAR(255),
+  `rank` BIGINT,
   `imdb_rating` VARCHAR(255),
   `user_rating` VARCHAR(255),
-  `user_review` VARCHAR(255),
-  FOREIGN KEY (`movie_id`) REFERENCES `movie` (`movie_id`),
-  FOREIGN KEY (`user_review`) REFERENCES `user` (`review`)
+  `user_review` VARCHAR(255)
 );
+
+ALTER TABLE `user` ADD FOREIGN KEY (`rating_id`) REFERENCES `ratings` (`rating_id`);
+ALTER TABLE `user` ADD FOREIGN KEY (`rank`) REFERENCES `movie` (`rank`);
+AlTER TABLE `ratings` ADD FOREIGN KEY (`rank`) REFERENCES `movie` (`rank`);
+AlTER TABLE `ratings` ADD FOREIGN KEY (`user_review`) REFERENCES `user` (`review`);
 
 CREATE TABLE `movie_actors` (
     `movie_id` BIGINT,
-    `cast_id` VARCHAR(1024),
+    `cast_id` VARCHAR(255),
     FOREIGN KEY (`movie_id`) REFERENCES `movie` (`rank`),
     FOREIGN KEY (`cast_id`) REFERENCES `cast` (`cast_id`)
 );
 
 CREATE TABLE `movie_director` (
-    `movie_id` BIGINT,
-    `director_id` VARCHAR(1024),
-    FOREIGN KEY (`movie_id`) REFERENCES `movie` (`rank`),
+    `rank` BIGINT,
+    `director_id` VARCHAR(255),
+    FOREIGN KEY (`rank`) REFERENCES `movie` (`rank`),
     FOREIGN KEY (`director_id`) REFERENCES `director` (`director_id`)
 );
 
 CREATE TABLE `movie_rating` (
     `rating_id` INT,
-  `movie_id` BIGINT,
-  FOREIGN KEY (`rating_id`) REFERENCES `ratings` (`rating_id`),
-  FOREIGN KEY (`movie_id`) REFERENCES `movie` (`rank`)
+    `movie_id` BIGINT,
+    FOREIGN KEY (`rating_id`) REFERENCES `ratings` (`rating_id`),
+    FOREIGN KEY (`movie_id`) REFERENCES `movie` (`rank`)
 );
 
 INSERT INTO Movie VALUES
