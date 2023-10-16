@@ -1,0 +1,251 @@
+﻿rank,movie_id,movie_name,year,imdb_rating,duration,genre
+1,tt0111161,The Shawshank Redemption,1994,9.3,142,Drama
+2,tt0068646,The Godfather,1972,9.2,175,Crime
+3,tt0468569,The Dark Knight,2008,9,152,Action
+4,tt0071562,The Godfather Part II,1974,9,202,Crime
+5,tt0050083,12 Angry Men,1957,9,96,Crime
+6,tt0108052,Schindler's List,1993,9,195,Biography
+7,tt0167260,The Lord of the Rings: The Return of the King,2003,9,201,Action
+8,tt0110912,Pulp Fiction,1994,8.9,154,Crime
+9,tt0120737,The Lord of the Rings: The Fellowship of the Ring,2001,8.8,178,Action
+10,tt0060196,"The Good, the Bad and the Ugly",1966,8.8,161,Adventure
+11,tt0109830,Forrest Gump,1994,8.8,142,Drama
+12,tt0137523,Fight Club,1999,8.8,139,Drama
+13,tt1375666,Inception,2010,8.8,148,Action
+14,tt0167261,The Lord of the Rings: The Two Towers,2002,8.8,179,Action
+15,tt0080684,The Empire Strikes Back,1980,8.7,124,Action
+16,tt0133093,The Matrix,1999,8.7,136,Action
+17,tt0099685,Goodfellas,1990,8.7,145,Biography
+18,tt0073486,One Flew Over the Cuckoo's Nest,1975,8.7,133,Drama
+19,tt0114369,Se7en,1995,8.6,127,Crime
+20,tt0047478,Shichinin no samurai,1954,8.6,207,Action
+21,tt0038650,It's a Wonderful Life,1946,8.6,130,Drama
+22,tt0102926,The Silence of the Lambs,1991,8.6,118,Crime
+23,tt0317248,City of God,2002,8.6,130,Crime
+24,tt0120815,Saving Private Ryan,1998,8.6,169,Drama
+25,tt0118799,Life Is Beautiful,1997,8.6,116,Comedy
+26,tt0120689,The Green Mile,1999,8.6,189,Crime
+27,tt0816692,Interstellar,2014,8.6,169,Adventure
+28,tt0076759,Star Wars,1977,8.6,121,Action
+29,tt0103064,Terminator 2: Judgment Day,1991,8.6,137,Action
+30,tt0088763,Back to the Future,1985,8.5,116,Adventure
+31,tt0245429,Sen to Chihiro no kamikakushi,2001,8.6,125,Animation
+32,tt0054215,Psycho,1960,8.5,109,Horror
+33,tt0253474,The Pianist,2002,8.5,150,Biography
+34,tt0110413,Leon: The Professional,1994,8.5,110,Action
+35,tt6751668,Parasite,2019,8.5,132,Comedy
+36,tt0110357,The Lion King,1994,8.5,88,Animation
+37,tt0172495,Gladiator,2000,8.5,155,Action
+38,tt0120586,American History X,1998,8.5,119,Crime
+39,tt0114814,The Usual Suspects,1995,8.5,106,Crime
+40,tt0407887,The Departed,2006,8.5,151,Crime
+41,tt0482571,The Prestige,2006,8.5,130,Drama
+42,tt0034583,Casablanca,1942,8.5,102,Drama
+43,tt1745960,Top Gun: Maverick,2022,8.6,130,Action
+44,tt2582802,Whiplash,2014,8.5,106,Drama
+45,tt1675434,The Intouchables,2011,8.5,112,Biography
+46,tt0027977,Modern Times,1936,8.5,87,Comedy
+47,tt0056058,Seppuku,1962,8.6,133,Action
+48,tt0064116,Once Upon a Time in the West,1968,8.5,165,Western
+49,tt0095327,Hotaru no haka,1988,8.5,89,Animation
+50,tt0047396,Rear Window,1954,8.5,112,Mystery
+51,tt0078748,Alien,1979,8.5,117,Horror
+52,tt0021749,City Lights,1931,8.5,87,Comedy
+53,tt0095765,Cinema Paradiso,1988,8.5,155,Drama
+54,tt0209144,Memento,2000,8.4,113,Mystery
+55,tt0078788,Apocalypse Now,1979,8.5,147,Drama
+56,tt0082971,Raiders of the Lost Ark,1981,8.4,115,Action
+57,tt1853728,Django Unchained,2012,8.4,165,Drama
+58,tt0910970,WALL-E,2008,8.4,98,Animation
+59,tt0405094,The Lives of Others,2006,8.4,137,Drama
+60,tt0043014,Sunset Boulevard,1950,8.4,110,Drama
+61,tt0050825,Paths of Glory,1957,8.4,88,Drama
+62,tt0081505,The Shining,1980,8.4,146,Drama
+63,tt0032553,The Great Dictator,1940,8.4,125,Comedy
+64,tt0051201,Witness for the Prosecution,1957,8.4,116,Crime
+65,tt4154756,Avengers: Infinity War,2018,8.4,149,Action
+66,tt0090605,Aliens,1986,8.4,137,Action
+67,tt0169547,American Beauty,1999,8.4,122,Drama
+68,tt0057012,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,1964,8.4,95,Comedy
+69,tt4633694,Spider-Man: Into the Spider-Verse,2018,8.4,117,Animation
+70,tt1345836,The Dark Knight Rises,2012,8.4,164,Action
+71,tt0364569,Oldboy,2003,8.4,101,Action
+72,tt7286456,Joker,2019,8.4,122,Crime
+73,tt0086879,Amadeus,1984,8.4,160,Biography
+74,tt0112573,Braveheart,1995,8.4,178,Biography
+75,tt0114709,Toy Story,1995,8.3,81,Animation
+76,tt2380307,Coco,2017,8.4,105,Animation
+77,tt0082096,Das Boot,1981,8.4,Nan,Drama
+78,tt0361748,Inglourious Basterds,2009,8.3,153,Adventure
+79,tt0119698,Mononoke-hime,1997,8.4,134,Animation
+80,tt4154796,Avengers: Endgame,2019,8.4,181,Action
+81,tt0087843,Once Upon a Time in America,1984,8.3,229,Crime
+82,tt0119217,Good Will Hunting,1997,8.3,126,Drama
+83,tt0180093,Requiem for a Dream,2000,8.3,102,Drama
+84,tt0435761,Toy Story 3,2010,8.3,103,Animation
+85,tt5311514,Kimi no na wa.,2016,8.4,106,Animation
+86,tt0045152,Singin' in the Rain,1952,8.3,103,Comedy
+87,tt1187043,3 Idiots,2009,8.4,170,Comedy
+88,tt0086190,Star Wars: Episode VI - Return of the Jedi,1983,8.3,131,Action
+89,tt0062622,2001: A Space Odyssey,1968,8.3,149,Adventure
+90,tt0338013,Eternal Sunshine of the Spotless Mind,2004,8.3,108,Drama
+91,tt0105236,Reservoir Dogs,1992,8.3,99,Crime
+92,tt0057565,Tengoku to jigoku,1963,8.4,143,Crime
+93,tt8267604,Capernaum,2018,8.4,126,Drama
+94,tt0033467,Citizen Kane,1941,8.3,119,Drama
+95,tt0056172,Lawrence of Arabia,1962,8.3,218,Adventure
+96,tt2106476,The Hunt,2012,8.3,115,Drama
+97,tt0053125,North by Northwest,1959,8.3,136,Action
+98,tt0022100,M,1931,8.3,117,Crime
+99,tt0052357,Vertigo,1958,8.3,128,Mystery
+100,tt0211915,Amelie,2001,8.3,122,Comedy
+101,tt0066921,A Clockwork Orange,1971,8.3,136,Crime
+102,tt0091251,Come and See,1985,8.4,142,Drama
+103,tt0093058,Full Metal Jacket,1987,8.3,116,Drama
+104,tt0036775,Double Indemnity,1944,8.3,107,Crime
+105,tt0053604,The Apartment,1960,8.3,125,Comedy
+106,tt0086250,Scarface,1983,8.3,170,Crime
+107,tt0044741,To Live,1952,8.3,143,Drama
+108,tt0070735,The Sting,1973,8.3,129,Comedy
+109,tt0056592,To Kill a Mockingbird,1962,8.3,129,Crime
+110,tt0075314,Taxi Driver,1976,8.2,114,Crime
+111,tt0119488,L.A. Confidential,1997,8.2,138,Crime
+112,tt1049413,Up,2009,8.3,96,Animation
+113,tt0113277,Heat,1995,8.3,170,Action
+114,tt8503618,Hamilton,2020,8.4,160,Biography
+115,tt0017136,Metropolis,1927,8.3,153,Drama
+116,tt1832382,A Separation,2011,8.3,123,Drama
+117,tt0208092,Snatch,2000,8.3,104,Comedy
+118,tt0095016,Die Hard,1988,8.2,132,Action
+119,tt1255953,Incendies,2010,8.3,131,Drama
+120,tt0097576,Indiana Jones and the Last Crusade,1989,8.2,127,Action
+121,tt0040522,Ladri di biciclette,1948,8.3,89,Drama
+122,tt8579674,1917,2019,8.2,119,Action
+123,tt10872600,Spider-Man: No Way Home,2021,8.3,148,Action
+124,tt0986264,Taare Zameen Par,2007,8.3,165,Drama
+125,tt0363163,Downfall,2004,8.2,156,Biography
+126,tt0059578,For a Few Dollars More,1965,8.2,132,Western
+127,tt0372784,Batman Begins,2005,8.2,140,Action
+128,tt5074352,Dangal,2016,8.3,161,Action
+129,tt0012349,The Kid,1921,8.3,68,Comedy
+130,tt0053291,Some Like It Hot,1959,8.2,121,Comedy
+131,tt10272386,The Father,2020,8.2,97,Drama
+132,tt0042192,All About Eve,1950,8.2,138,Drama
+133,tt6966692,Green Book,2018,8.2,130,Biography
+134,tt0993846,The Wolf of Wall Street,2013,8.2,180,Biography
+135,tt6710474,Everything Everywhere All at Once,2022,8.3,139,Action
+136,tt0055031,Judgment at Nuremberg,1961,8.3,179,Drama
+137,tt0105695,Unforgiven,1992,8.2,130,Drama
+138,tt0112641,Casino,1995,8.2,178,Crime
+139,tt0089881,Ran,1985,8.2,162,Action
+140,tt0457430,Pan's Labyrinth,2006,8.2,118,Drama
+141,tt0469494,There Will Be Blood,2007,8.2,158,Drama
+142,tt0167404,The Sixth Sense,1999,8.2,107,Drama
+143,tt0268978,A Beautiful Mind,2001,8.2,135,Biography
+144,tt0071853,Monty Python and the Holy Grail,1975,8.2,91,Adventure
+145,tt0120382,The Truman Show,1998,8.2,103,Comedy
+146,tt0055630,Yojimbo,1961,8.2,110,Action
+147,tt0040897,The Treasure of the Sierra Madre,1948,8.2,126,Adventure
+148,tt0042876,Rashomon,1950,8.2,88,Crime
+149,tt1130884,Shutter Island,2010,8.2,138,Mystery
+150,tt0057115,The Great Escape,1963,8.2,172,Adventure
+151,tt0107290,Jurassic Park,1993,8.2,127,Action
+152,tt0266697,Kill Bill: Vol. 1,2003,8.2,111,Action
+153,tt0477348,No Country for Old Men,2007,8.2,122,Crime
+154,tt0266543,Finding Nemo,2003,8.2,100,Animation
+155,tt0080678,The Elephant Man,1980,8.2,124,Biography
+156,tt0081398,Raging Bull,1980,8.2,129,Biography
+157,tt0071315,Chinatown,1974,8.2,130,Drama
+158,tt0031381,Gone with the Wind,1939,8.2,238,Drama
+159,tt0434409,V for Vendetta,2005,8.2,132,Action
+160,tt0084787,The Thing,1982,8.2,109,Horror
+161,tt2096673,Inside Out,2015,8.2,95,Animation
+162,tt0120735,"Lock, Stock and Two Smoking Barrels",1998,8.2,107,Action
+163,tt0046912,Dial M for Murder,1954,8.2,105,Crime
+164,tt1305806,The Secret in Their Eyes,2009,8.2,129,Drama
+165,tt0050212,The Bridge on the River Kwai,1957,8.2,161,Adventure
+166,tt0347149,Howl's Moving Castle,2004,8.2,119,Animation
+167,tt5027774,"Three Billboards Outside Ebbing, Missouri",2017,8.1,115,Comedy
+168,tt0117951,Trainspotting,1996,8.1,93,Drama
+169,tt1205489,Gran Torino,2008,8.1,116,Drama
+170,tt1291584,Warrior,2011,8.2,140,Action
+171,tt0116282,Fargo,1996,8.1,98,Crime
+172,tt0096283,My Neighbor Totoro,1988,8.1,86,Animation
+173,tt1392214,Prisoners,2013,8.1,153,Crime
+174,tt0405159,Million Dollar Baby,2004,8.1,132,Drama
+175,tt0015864,The Gold Rush,1925,8.2,95,Adventure
+176,tt0083658,Blade Runner,1982,8.1,117,Action
+177,tt0264464,Catch Me If You Can,2002,8.1,141,Biography
+178,tt0047296,On the Waterfront,1954,8.1,108,Crime
+179,tt0041959,The Third Man,1949,8.1,104,Film-Noir
+180,tt0118849,Children of Heaven,1997,8.2,89,Drama
+181,tt0052618,Ben-Hur,1959,8.1,212,Adventure
+182,tt2024544,12 Years a Slave,2013,8.1,134,Biography
+183,tt0017925,The General,1926,8.2,67,Action
+184,tt0050986,Wild Strawberries,1957,8.1,91,Drama
+185,tt2267998,Gone Girl,2014,8.1,149,Drama
+186,tt0112471,Before Sunrise,1995,8.1,101,Drama
+187,tt1201607,Harry Potter and the Deathly Hallows: Part 2,2011,8.1,130,Adventure
+188,tt0077416,The Deer Hunter,1978,8.1,183,Drama
+189,tt0107207,In the Name of the Father,1993,8.1,133,Biography
+190,tt2278388,The Grand Budapest Hotel,2014,8.1,99,Adventure
+191,tt0031679,Mr. Smith Goes to Washington,1939,8.1,129,Comedy
+192,tt0046268,The Wages of Fear,1953,8.2,131,Adventure
+193,tt0072684,Barry Lyndon,1975,8.1,185,Adventure
+194,tt0015324,Sherlock Jr,1924,8.2,45,Action
+195,tt0353969,Memories of Murder,2003,8.1,131,Crime
+196,tt3170832,Room,2015,8.1,118,Drama
+197,tt4729430,Klaus,2019,8.1,96,Animation
+198,tt2119532,Hacksaw Ridge,2016,8.1,139,Biography
+199,tt0050976,The Seventh Seal,1957,8.1,96,Drama
+200,tt3011894,Wild Tales,2014,8.1,122,Comedy
+201,tt0118715,The Big Lebowski,1998,8.1,117,Comedy
+202,tt1392190,Mad Max: Fury Road,2015,8.1,120,Action
+203,tt0892769,How to Train Your Dragon,2010,8.1,98,Animation
+204,tt0978762,Mary and Max.,2009,8.1,92,Animation
+205,tt0198781,"Monsters, Inc.",2001,8.1,92,Animation
+206,tt0073195,Jaws,1975,8.1,124,Adventure
+207,tt0019254,The Passion of Christ,1928,8.2,110,Biography
+208,tt0395169,Hotel Rwanda,2004,8.1,121,Biography
+209,tt0097165,Dead Poets Society,1989,8.1,128,Comedy
+210,tt0046438,Tokyo Story,1953,8.2,136,Drama
+211,tt0048473,Pather Panchali,1955,8.3,125,Drama
+212,tt0075148,Rocky,1976,8.1,120,Drama
+213,tt0091763,Platoon,1986,8.1,120,Drama
+214,tt1950186,Ford v Ferrari,2019,8.1,152,Action
+215,tt0092005,Stand by Me,1986,8.1,89,Adventure
+216,tt0088247,The Terminator,1984,8.1,107,Action
+217,tt1895587,Spotlight,2015,8.1,129,Biography
+218,tt1979320,Rush,2013,8.1,123,Action
+219,tt0758758,Into the Wild,2007,8.1,148,Adventure
+220,tt0074958,Network,1976,8.1,121,Drama
+221,tt0032138,The Wizard of Oz,1939,8.1,102,Adventure
+222,tt3315342,Logan,2017,8.1,137,Action
+223,tt0107048,Groundhog Day,1993,8.1,101,Comedy
+224,tt0382932,Ratatouille,2007,8.1,111,Animation
+225,tt0381681,Before Sunset,2004,8.1,80,Drama
+226,tt0070047,The Exorcist,1973,8.1,122,Horror
+227,tt0036868,The Best Years of Our Lives,1946,8.1,170,Drama
+228,tt0317705,The Incredibles,2004,8,115,Animation
+229,tt0035446,To Be or Not to Be,1942,8.2,99,Comedy
+230,tt0032551,The Grapes of Wrath,1940,8.1,129,Drama
+231,tt0032976,Rebecca,1940,8.1,130,Drama
+232,tt0058946,The Battle of Algiers,1966,8.1,121,Drama
+233,tt1028532,Hachi: A Dog's Tale,2009,8.1,93,Biography
+234,tt0061512,Cool Hand Luke,1967,8.1,127,Crime
+235,tt0245712,Amores perros,2000,8.1,154,Drama
+236,tt0325980,Pirates of the Caribbean: The Curse of the Black Pearl,2003,8.1,143,Action
+237,tt0113247,La haine,1995,8.1,98,Crime
+238,tt0053198,The 400 Blows,1959,8.1,99,Crime
+239,tt0060827,Persona,1966,8.1,85,Drama
+240,tt0079470,Life of Brian,1979,8,94,Comedy
+241,tt0476735,My Father and My Son,2005,8.2,112,Drama
+242,tt0071411,Dersu Uzala,1975,8.2,142,Adventure
+243,tt0025316,It Happened One Night,1934,8.1,105,Comedy
+244,tt0059742,The Sound of Music,1965,8.1,172,Biography
+245,tt4016934,The Handmaiden,2016,8.1,145,Drama
+246,tt15097216,Jai Bhim,2021,8.9,164,Crime
+247,tt0103639,Aladdin,1992,8,90,Animation
+248,tt0083987,Gandhi,1982,8.1,191,Biography
+249,tt1454029,The Help,2011,8.1,146,Drama
+250,tt0101414,Beauty and the Beast,1991,8,84,Animation
