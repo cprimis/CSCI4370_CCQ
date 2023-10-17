@@ -16,9 +16,12 @@
   SELECT username, COUNT(*) AS "review_count" FROM Ratings GROUP BY username ORDER BY COUNT(*) DESC LIMIT 10;
 
 -- Reviews by Directors
-SELECT * FROM 
+-- http://localhost:8080/view_reviews_director
+  -- This query returns all of the reviews in the database about movies directed by each specific director. The result is displayed on the webpage. 
 SELECT DISTINCT director_name, rating_id, user_rating, user_review, Ratings.movie_name FROM Ratings NATURAL JOIN Movie_Directors NATURAL JOIN Directors ORDER BY director_name;
 
 -- Reviews by Actors
-SELECT * FROM 
+-- http://localhost:8080/view_reviews_actor
+  -- This query returns all of the reviews in the database about movies with casts that include each specific actor. The result is displayed on the webpage.
 SELECT DISTINCT cast_name, rating_id, user_rating, user_review, Ratings.movie_name FROM Ratings NATURAL JOIN Movie_Actors NATURAL JOIN Actors ORDER BY cast_name;
+
