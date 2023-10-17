@@ -21,11 +21,11 @@ public class MyErrorController implements ErrorController {
 
             // display specific error page
             if (statusCode == HttpStatus.NOT_FOUND.value()) {
-                return "404";
+                return "404 Error. Please try again.";
             } else if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
-                return "500";
+                return "500 Error. Please try again.";
             } else if (statusCode == HttpStatus.FORBIDDEN.value()) {
-                return "403";
+                return "403 Error. Please try again.";
             }
         }
 
