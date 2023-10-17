@@ -30,15 +30,15 @@ CREATE TABLE `Directors` (
 );
 
 CREATE TABLE `Movie_Actors` (
-  `movie_name` VARCHAR(255),
-  `cast_id` VARCHAR(255),
+  `movie_name` VARCHAR(255) PRIMARY KEY,
+  `cast_id` VARCHAR(255) PRIMARY KEY,
   FOREIGN KEY (`movie_name`) REFERENCES `Movie`(`movie_name`),
   FOREIGN KEY (`cast_id`) REFERENCES `Actors`(`cast_id`)
 );
 
 CREATE TABLE `Movie_Directors` (
-  `movie_name` VARCHAR(255),
-  `director_id` VARCHAR(255),
+  `movie_name` VARCHAR(255) PRIMARY KEY,
+  `director_id` VARCHAR(255) PRIMARY KEY,
   FOREIGN KEY (`movie_name`) REFERENCES `Movie`(`movie_name`),
   FOREIGN KEY (`director_id`) REFERENCES `Directors`(`director_id`)
 );
