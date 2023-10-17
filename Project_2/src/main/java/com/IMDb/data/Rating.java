@@ -16,5 +16,6 @@ public class Rating {
         this.movie_name = movie_name;
         this.user_rating = user_rating;
         this.user_review = user_review;
-    }
-}
+    } // Rating
+    
+} // Rating
