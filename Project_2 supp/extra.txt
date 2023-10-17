@@ -1,0 +1,3 @@
+https://www.kaggle.com/datasets/ashishjangra27/imdb-top-250-movies
+
+Data was cleaned (ie. removed non UTF-8 characters, extra spaces)
