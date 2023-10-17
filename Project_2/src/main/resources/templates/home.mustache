@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>User Leaderboard</title>
-    <style>
+    <title>New Review</title>
+        <style>
         .topbar {
             overflow: hidden;
             background-color: #fff;
@@ -22,7 +22,7 @@
             background-color: #ddd;
             color: black;
         }
-    </style>    
+    </style>
 </head>
     <body>
 	    <div class="topbar">
@@ -34,22 +34,25 @@
 		  <button onclick="location.href='/view_reviews_director';">View Reviews by Director</button>
 		  <button onclick="location.href='/select';">Select Tables</button>
 		</div>
-        <h2>User Leaderboard</h2>
-        <p>Leave a new review to climb the leaderboard!</p>
+        <h2>Home</h2>
+        <img src="https://cdn1.vox-cdn.com/thumbor/ysXEdnqxuPrPYDzzXP-dU5u_A68=/0x0:1920x1080/1600x900/cdn0.vox-cdn.com/uploads/chorus_image/image/47327740/20151003170110.0.0.0.jpg" alt="He's so sad :(" width="800" height="450">        
+        <h2>All Reviews</h2>
 
         <table align="left", border = 1, cellpadding = 3px, cellspacing = 0px>
             <tr>
-            	<th>Rank</th>
                 <th>Username</th>
-                <th>Review Count</th>
+                <th>Movie</th>
+                <th>User Rating</th>
+                <th>User Review</th>
             </tr>
-            {{#leaders}}
+            {{#ratings}}
                 <tr>
-                	<td>{{rank}}</td>
                     <td>{{username}}</td>
-                    <td>{{review_count}}</td>
+                    <td>{{movie_name}}</td>
+                    <td>{{user_rating}}</td>
+                    <td>{{user_review}}</td>
                 </tr>
-            {{/leaders}}
+            {{/ratings}}
         </table>
     </body>
 </html>

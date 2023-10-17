@@ -22,13 +22,13 @@ public class WebController {
             throw new IllegalStateException("Cannot connect to the database!", e);
         }
     }
-
+/*
     @GetMapping("/")
     @ResponseBody
     public String root() {
         return "Hello from root";
     }
-
+*/
     @GetMapping("/page")
     public ModelAndView page() {
         ModelAndView mv = new ModelAndView("page1");

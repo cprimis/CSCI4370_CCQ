@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>User Leaderboard</title>
-    <style>
+    <title>Delete Review</title>
+        <style>
         .topbar {
             overflow: hidden;
             background-color: #fff;
@@ -22,7 +22,7 @@
             background-color: #ddd;
             color: black;
         }
-    </style>    
+    </style>
 </head>
     <body>
 	    <div class="topbar">
@@ -34,22 +34,35 @@
 		  <button onclick="location.href='/view_reviews_director';">View Reviews by Director</button>
 		  <button onclick="location.href='/select';">Select Tables</button>
 		</div>
-        <h2>User Leaderboard</h2>
-        <p>Leave a new review to climb the leaderboard!</p>
-
+        <h2>Delete a User Review by rating_id</h2>
+        
+        <form action="/submitdelete" method="POST">
+            <input type="text" name="rating_id" placeholder="Rating ID">
+            <input type="submit"/>
+        </form>
+        
+        <h2>All Reviews</h2>
+        
         <table align="left", border = 1, cellpadding = 3px, cellspacing = 0px>
             <tr>
-            	<th>Rank</th>
+            	<th>Rating ID</th>
                 <th>Username</th>
-                <th>Review Count</th>
+                <th>Movie</th>
+                <th>User Rating</th>
+                <th>User Review</th>
             </tr>
-            {{#leaders}}
+            {{#ratings}}
                 <tr>
-                	<td>{{rank}}</td>
+                	<td>{{rating_id}}</td>
                     <td>{{username}}</td>
-                    <td>{{review_count}}</td>
+                    <td>{{movie_name}}</td>
+                    <td>{{user_rating}}</td>
+                    <td>{{user_review}}</td>
                 </tr>
-            {{/leaders}}
+            {{/ratings}}
         </table>
+        
+
+        
     </body>
 </html>
