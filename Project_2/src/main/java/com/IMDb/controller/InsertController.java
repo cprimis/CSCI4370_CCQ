@@ -50,9 +50,17 @@ public class InsertController {
     }
     
     @PostMapping("/submitinsert")
-    public ModelAndView formsubmit(String real_name, String username, String movie_name, String user_rating, String user_review) {
+    public ModelAndView formsubmit(String real_name, String username, String movie_name, double user_rating, String user_review) {
         
         try {
+            if (user_rating < 0 || user_rating > 10) {
+                throw new IllegalArgumentException("User Rating must be between 0.0 and 10.0.");          
+            } else if (real_name == null || username == null || movie_name == null || user_review == null) {
+                throw new IllegalArgumentException("All fields are required.");
+            }
+            
+            user_rating = (double) Math.round(user_rating * 10) / 10;
+
             Connection connection = DriverManager.getConnection(url, user, password);
             
             Statement stmt = connection.createStatement();
@@ -69,6 +77,8 @@ public class InsertController {
    
         } catch (SQLException e) {
             throw new IllegalStateException("Cannot connect to the database!", e);
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("All fields are required. User Rating must be between 0.0 and 10.0.", e);
         }
         
         return new ModelAndView("redirect:/insert");
