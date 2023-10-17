@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>New Review</title>
+</head>
+    <body>
+        <h2>Create a New Review</h2>
+        
+        <form action="/submitinsert" method="POST">
+            <input type="text" name="real_name" placeholder="Real Name">
+            <input type="text" name="username" placeholder="Username">
+            <select name="movie_name">
+            	<option>--Select Movie--</option>
+            	<option>Inception</option>
+            <input type="text" name="user_rating" placeholder="Rating (0.0-10.0)">
+            <input type="text" name="user_review" placeholder="Review">
+            <input type="submit"/>
+        </form>
+        
+        <h2>All Reviews</h2>
+        
+        <table align="left", border = 1, cellpadding = 3px, cellspacing = 0px>
+            <tr>
+                <th>Username</th>
+                <th>Movie</th>
+                <th>User Rating</th>
+                <th>User Review</th>
+            </tr>
+            {{#ratings}}
+                <tr>
+                    <td>{{username}}</td>
+                    <td>{{movie_name}}</td>
+                    <td>{{user_rating}}</td>
+                    <td>{{user_review}}</td>
+                </tr>
+            {{/ratings}}
+        </table>
+        
+    </body>
+</html>
