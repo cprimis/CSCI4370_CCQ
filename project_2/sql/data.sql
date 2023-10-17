@@ -1,4 +1,4 @@
-INSERT INTO `Movies` VALUES
+INSERT INTO `Movie` VALUES
 ('1','The Shawshank Redemption','1994','9.3','142','Drama'),
 ('2','The Godfather','1972','9.2','175','Crime'),
 ('3','The Dark Knight','2008','9','152','Action'),
