@@ -11,6 +11,14 @@
   INSERT INTO Ratings VALUES ('" + rating_id + "','" + real_name + "','" + username + "','" + movie_name "','" + user_rating + "','" + user_review + "');
   
 -- Delete
+-- https://localhost:8080/delete
+  -- This query returns the Ratings table with the most recent comments at the top. The result is displayed on the webpage.
+  SELECT * FROM Ratings ORDER BY rating_id DESC;
+  -- This query returns all of the movies in the Movie table. The result is used to ensure that there are movies available to access and write reviews.
+  SELECT * FROM Movie;
+-- https://localhost:8080/submitdelete
+  -- This query deletes the row of the review in the Ratings table based on the specific rating ID the user inputs using the website form.
+  DELETE FROM Ratings WHERE rating_id = + rating_id; 
 
 -- User Leaderboard
 -- http://localhost:8080/leaderboard
