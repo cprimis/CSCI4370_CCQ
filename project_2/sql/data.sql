@@ -1866,7 +1866,6 @@ INSERT INTO `Directors` VALUES
 
 
 INSERT INTO `Movie_Actors` VALUES
-('id',NULL),
 ('The Kid','nm0000122'),
 ('The Kid','nm0701012'),
 ('The Kid','nm0001067'),
