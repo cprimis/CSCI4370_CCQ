@@ -15,7 +15,7 @@ public class InsertController {
     String password = "mysqlpass";
     
     @GetMapping("/insert")
-    public ModelAndView leaderboard() {
+    public ModelAndView insert() {
         ModelAndView mv = new ModelAndView("insert");
 
         try {
