@@ -13,7 +13,7 @@ DROP TABLE IF EXISTS Ratings;
 CREATE TABLE `Movie` (
   `rank` INT,
   `movie_name` VARCHAR(255) PRIMARY KEY,
-  `release_year` VARCHAR(255),
+  `release_year` INT,
   `imdb_rating` DECIMAL(2,1),
   `duration` INT,
   `genre` VARCHAR(255)
@@ -50,7 +50,7 @@ CREATE TABLE `Ratings` (
   `real_name` VARCHAR(255),
   `username` VARCHAR(255),
   `movie_name` VARCHAR(255),
-  `user_rating` VARCHAR(255),
+  `user_rating` DECIMAL(2,1),
   `user_review` VARCHAR(255),
   FOREIGN KEY (`movie_name`) REFERENCES `Movie`(`movie_name`)
 );
