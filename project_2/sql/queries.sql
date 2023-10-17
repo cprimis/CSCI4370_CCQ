@@ -17,6 +17,8 @@ SET r.num_of_reviews = subquery.review_count;
 
 SELECT DISTINCT username, num_of_reviews from Ratings ORDER BY num_of_reviews DESC LIMIT 10;
 
+SELECT username, COUNT(*) AS "review_count" FROM Ratings GROUP BY username ORDER BY COUNT(*) DESC LIMIT 10
+
 -- Reviews by Directors
 SELECT * FROM 
 SELECT DISTINCT director_name, rating_id, user_rating, user_review, Ratings.movie_name FROM Ratings NATURAL JOIN Movie_Directors NATURAL JOIN Directors ORDER BY director_name;
