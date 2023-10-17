@@ -64,7 +64,7 @@ CREATE TABLE `movie_rating` (
     FOREIGN KEY (`movie_id`) REFERENCES `movie` (`rank`)
 );
 
-INSERT INTO Movie VALUES
+INSERT INTO movie VALUES
 (1,'tt0111161','The Shawshank Redemption',1994,'9.3','142','Drama'),
 (2,'tt0068646','The Godfather',1972,'9.2','175','Crime'),
 (3,'tt0468569','The Dark Knight',2008,'9.0','152','Action'),
@@ -316,7 +316,7 @@ INSERT INTO Movie VALUES
 (249,'tt1454029','The Help',2011,'8.1','146','Drama'),
 (250,'tt0101414','Beauty and the Beast',1991,'8.0','84','Animation');
 
-INSERT INTO Cast VALUES
+INSERT INTO cast VALUES
 ('nm0000209,nm0000151,nm0348409,nm0006669,nm0000317,nm0004743,nm0001679','Tim Robbins,Morgan Freeman,Bob Gunton,William Sadler,Clancy Brown,Gil Bellows,Mark Rolston'),
 ('nm0000008,nm0000199,nm0001001,nm0000473,nm0144710,nm0000380,nm0001330','Marlon Brando,Al Pacino,James Caan,Diane Keaton,Richard S. Castellano,Robert Duvall,Sterling Hayden'),
 ('nm0000288,nm0005132,nm0001173,nm0000323,nm0350454,nm0000198,nm0000151','Christian Bale,Heath Ledger,Aaron Eckhart,Michael Caine,Maggie Gyllenhaal,Gary Oldman,Morgan Freeman'),
@@ -568,7 +568,7 @@ INSERT INTO Cast VALUES
 ('nm1297015,nm0205626,nm0818055,nm0397171,nm1567113,nm1501738,nm0005049','Emma Stone,Viola Davis,Octavia Spencer,Bryce Dallas Howard,Jessica Chastain,Ahna O''Reilly,Allison Janney'),
 ('nm0641314,nm0000913,nm0181425,nm0263591,nm0001450,nm0001583,nm0682300','Paige O''Hara,Robby Benson,Jesse Corti,Rex Everhart,Angela Lansbury,Jerry Orbach,Bradley Pierce');
 
-INSERT INTO Director VALUES
+INSERT INTO director VALUES
 ('nm0001104','Frank Darabont'),
 ('nm0000338','Francis Ford Coppola'),
 ('nm0634240','Christopher Nolan'),
