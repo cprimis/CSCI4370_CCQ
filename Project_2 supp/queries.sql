@@ -12,7 +12,7 @@
 
 -- User Leaderboard
 -- http://localhost:8080/leaderboard
-  -- This query returns the top 10 users with the most reviews in the database. The result is displayed on the webpage.
+  -- This query returns the top 10 users with the most reviews in the database. This query aggregates the Ratings table. The result is displayed on the webpage.
   SELECT username, COUNT(*) AS "review_count" FROM Ratings GROUP BY username ORDER BY COUNT(*) DESC LIMIT 10;
 
 -- Reviews by Directors
