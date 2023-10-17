@@ -1,16 +1,16 @@
-DROP DATABASE Project_2 IF EXISTS;
+DROP DATABASE IF EXISTS Project_2;
 
 CREATE DATABASE Project_2;
 USE Project_2;
 
-DROP TABLE Movie IF EXISTS;
-DROP TABLE Directors IF EXISTS;
-DROP TABLE Actors IF EXISTS;
-DROP TABLE Movies_Directors IF EXISTS;
-DROP TABLE Movies_Actors IF EXISTS;
-DROP TABLE Ratings IF EXISTS;
+DROP TABLE IF EXISTS Movies;
+DROP TABLE IF EXISTS Directors;
+DROP TABLE IF EXISTS Actors;
+DROP TABLE IF EXISTS Movies_Directors;
+DROP TABLE IF EXISTS Movies_Actors;
+DROP TABLE IF EXISTS Ratings;
 
-CREATE TABLE `Movie` (
+CREATE TABLE `Movies` (
   `rank` INT,
   `movie_name` VARCHAR(255) PRIMARY KEY,
   `release_year` VARCHAR(255),
@@ -30,16 +30,18 @@ CREATE TABLE `Directors` (
 );
 
 CREATE TABLE `Movie_Actors` (
-  `movie_name` VARCHAR(255) PRIMARY KEY,
-  `cast_id` VARCHAR(255) PRIMARY KEY,
-  FOREIGN KEY (`movie_name`) REFERENCES `Movie`(`movie_name`),
+  `movie_name` VARCHAR(255),
+  `cast_id` VARCHAR(255),
+  PRIMARY KEY (`movie_name`, `cast_id`),
+  FOREIGN KEY (`movie_name`) REFERENCES `Movies`(`movie_name`),
   FOREIGN KEY (`cast_id`) REFERENCES `Actors`(`cast_id`)
 );
 
 CREATE TABLE `Movie_Directors` (
-  `movie_name` VARCHAR(255) PRIMARY KEY,
-  `director_id` VARCHAR(255) PRIMARY KEY,
-  FOREIGN KEY (`movie_name`) REFERENCES `Movie`(`movie_name`),
+  `movie_name` VARCHAR(255),
+  `director_id` VARCHAR(255),
+  PRIMARY KEY (`movie_name`, `director_id`),
+  FOREIGN KEY (`movie_name`) REFERENCES `Movies`(`movie_name`),
   FOREIGN KEY (`director_id`) REFERENCES `Directors`(`director_id`)
 );
 
@@ -50,6 +52,6 @@ CREATE TABLE `Ratings` (
   `movie_name` VARCHAR(255),
   `user_rating` VARCHAR(255),
   `user_review` VARCHAR(255),
-  FOREIGN KEY (`movie_name`) REFERENCES `Movie`(`movie_name`)
+  FOREIGN KEY (`movie_name`) REFERENCES `Movies`(`movie_name`)
 );
 
