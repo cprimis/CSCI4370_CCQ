@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS Movies_Directors;
 DROP TABLE IF EXISTS Movies_Actors;
 DROP TABLE IF EXISTS Ratings;
 
-CREATE TABLE `Movies` (
+CREATE TABLE `Movie` (
   `rank` INT,
   `movie_name` VARCHAR(255) PRIMARY KEY,
   `release_year` VARCHAR(255),
@@ -33,7 +33,7 @@ CREATE TABLE `Movie_Actors` (
   `movie_name` VARCHAR(255),
   `cast_id` VARCHAR(255),
   PRIMARY KEY (`movie_name`, `cast_id`),
-  FOREIGN KEY (`movie_name`) REFERENCES `Movies`(`movie_name`),
+  FOREIGN KEY (`movie_name`) REFERENCES `Movie`(`movie_name`),
   FOREIGN KEY (`cast_id`) REFERENCES `Actors`(`cast_id`)
 );
 
@@ -41,7 +41,7 @@ CREATE TABLE `Movie_Directors` (
   `movie_name` VARCHAR(255),
   `director_id` VARCHAR(255),
   PRIMARY KEY (`movie_name`, `director_id`),
-  FOREIGN KEY (`movie_name`) REFERENCES `Movies`(`movie_name`),
+  FOREIGN KEY (`movie_name`) REFERENCES `Movie`(`movie_name`),
   FOREIGN KEY (`director_id`) REFERENCES `Directors`(`director_id`)
 );
 
@@ -52,6 +52,6 @@ CREATE TABLE `Ratings` (
   `movie_name` VARCHAR(255),
   `user_rating` VARCHAR(255),
   `user_review` VARCHAR(255),
-  FOREIGN KEY (`movie_name`) REFERENCES `Movies`(`movie_name`)
+  FOREIGN KEY (`movie_name`) REFERENCES `Movie`(`movie_name`)
 );
 
