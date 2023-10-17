@@ -3920,3 +3920,8 @@ INSERT INTO `Ratings` VALUES
 (18,'Reed Phelps','reedphelpss','Interstellar','9.6','The soundtrack makes me cry every time'),
 (19,'Javier Hurst','kubrickfan','2001: A Space Odyssey','9.1','Kubrick''s mind is insane'),
 (20,'Amy Jacobson','moviesgalor','Vertigo','8.8','This makes my mind spin');
+(21,'Claudette Miranda','puppylover','Coco','9.0','My kids absolutely love this movie');
+(22,'Paul Harris','paulh','Klaus','7.3','This gets me in the christmas spirit');
+(23,'Callum Miller','cmmovies','Jaws','9.3','That''s a big shark');
+(24,'Nichole Marshall','nikki27','Snatch','8.2','OG Guy Ritchie');
+(25,'Callum Miller','cmmovies','Heat','9','Pacino and De Niro. That''s it. That''s the review');
