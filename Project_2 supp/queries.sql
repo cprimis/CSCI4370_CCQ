@@ -2,6 +2,8 @@
 -- http://localhost:8080/insert
   -- This query returns the Ratings table with the most recent comments at the top. The result is displayed on the webpage.
   SELECT * FROM Ratings ORDER BY rating_id DESC;
+  -- This query returns all of the movies in the Movie table. The result is used in a dropdown for the user to select a movie to rate.
+  SELECT * FROM Movie;
 -- http://localhost:8080/submitinsert
   -- This query returns the ID of the most recent rating, since rating ID is just an increasing integer. This is used to assign the new review to the next integer for the rating ID.
   SELECT MAX(rating_id) AS "max" FROM Ratings;
