@@ -15,7 +15,7 @@ ORDER BY username )
 AS subquery ON r.username = subquery.username 
 SET r.num_of_reviews = subquery.review_count;
 
-SELECT DISTINCT username, num_of_reviews from Ratings ORDER BY num_of_reviews DESC LIMIT 5;
+SELECT DISTINCT username, num_of_reviews from Ratings ORDER BY num_of_reviews DESC LIMIT 10;
 
 -- Reviews by Directors
 SELECT * FROM 
