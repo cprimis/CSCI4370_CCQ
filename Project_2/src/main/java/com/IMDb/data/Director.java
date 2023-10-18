@@ -10,6 +10,7 @@ public class Director {
 		this.director_name = director_name;
 	} // Director
 
+	@Override
 	public String toString() {
 		return "Director name: " + director_name + "\n" + "Director ID: " + director_id + "\n";
 	} // toString

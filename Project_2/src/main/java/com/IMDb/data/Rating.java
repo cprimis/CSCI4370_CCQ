@@ -18,4 +18,16 @@ public class Rating {
         this.user_review = user_review;
     } // Rating
     
+    @Override
+    public String toString() {
+    	return "Rating{" +
+    	        "rating_id=" + rating_id +
+    	        ", real_name='" + real_name + '\'' +
+    	        ", username='" + username + '\'' +
+    	        ", movie_name='" + movie_name + '\'' +
+    	        ", user_rating=" + user_rating +
+    	        ", user_review='" + user_review + '\'' +
+    	        '}';
+    } // toString
+    
 } // Rating

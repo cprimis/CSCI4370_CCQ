@@ -10,4 +10,14 @@ public class Leader {
         this.username = username;
         this.review_count = review_count;
     }
+    
+    @Override
+    public String toString() {
+        return "Leader{" +
+                "rank=" + rank +
+                ", username='" + username + '\'' +
+                ", review_count=" + review_count +
+                '}';
+    } // toString
+
 }

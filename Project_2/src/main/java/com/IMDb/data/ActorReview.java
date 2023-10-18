@@ -14,6 +14,7 @@ public class ActorReview {
 		this.user_review = user_review;
 	} // ActorReview
 	
+	@Override	
 	public String toString() {
 		return "Actor name: " + cast_name+ "\n"
 			+ "Movie name: " + movie_name + "\n"

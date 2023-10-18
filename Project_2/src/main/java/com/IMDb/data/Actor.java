@@ -10,6 +10,7 @@ public class Actor {
 		this.cast_name = cast_name;
 	} // Actor
 	
+	@Override
 	public String toString() {
 		return "Actor name: " + cast_name+ "\n" + "Actor ID: " + cast_id + "\n";
 	} // toString

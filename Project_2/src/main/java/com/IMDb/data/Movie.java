@@ -19,4 +19,17 @@ public class Movie {
 		this.genre = genre;
 	} // Movie
 
+	@Override
+	public String toString() {
+	    return "Movie{" +
+	            "rank=" + rank +
+	            ", movie_name='" + movie_name + '\'' +
+	            ", release_year='" + release_year + '\'' +
+	            ", imdb_rating=" + imdb_rating +
+	            ", duration=" + duration +
+	            ", genre='" + genre + '\'' +
+	            '}';
+	}
+
+	
 } // Movie
