@@ -15,7 +15,7 @@ public class DeleteController {
     String password = "mysqlpass";
     
     @GetMapping("/delete")
-    public ModelAndView delete() {
+    public ModelAndView leaderboard() {
         ModelAndView mv = new ModelAndView("delete");
 
         try {

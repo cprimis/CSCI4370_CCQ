@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Delete Review</title>
+    <title>New Review</title>
         <style>
         .topbar {
             overflow: hidden;
@@ -34,35 +34,35 @@
 		  <button onclick="location.href='/view_reviews_director';">View Reviews by Director</button>
 		  <button onclick="location.href='/select';">Select Tables</button>
 		</div>
-        <h2>Delete a User Review by rating_id</h2>
+        <h2>View reviews for actors</h2>
         
-        <form action="/submitdelete" method="POST">
-            <input type="text" name="rating_id" placeholder="Rating ID">
+        <form action="/submitactorreview" method="POST">
+            <select name="cast_name">
+            	<option>--Select Actor--</option>
+            	{{#actors}}
+            	<option>{{cast_name}}</option>
+   	            {{/actors}}
             <input type="submit"/>
         </form>
         
-        <h2>All Reviews</h2>
+        <h2>Review Table</h2>
         
         <table align="left", border = 1, cellpadding = 3px, cellspacing = 0px>
             <tr>
-            	<th>Rating ID</th>
-                <th>Username</th>
+                <th>Actor</th>
                 <th>Movie</th>
                 <th>User Rating</th>
                 <th>User Review</th>
             </tr>
-            {{#ratings}}
+            {{#actor_review}}
                 <tr>
-                	<td>{{rating_id}}</td>
-                    <td>{{username}}</td>
+                    <td>{{cast_name}}</td>
                     <td>{{movie_name}}</td>
                     <td>{{user_rating}}</td>
                     <td>{{user_review}}</td>
                 </tr>
-            {{/ratings}}
+            {{/actor_review}}
         </table>
         
-
-        
     </body>
-</html>
+</html>	

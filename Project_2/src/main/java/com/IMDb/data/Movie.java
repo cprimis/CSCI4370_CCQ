@@ -1,6 +1,7 @@
 package com.IMDb.data;
 
 public class Movie {
+	
 	private int rank;
 	private String movie_name;	
 	private String release_year;
@@ -17,7 +18,5 @@ public class Movie {
 		this.duration = duration;
 		this.genre = genre;
 	} // Movie
-
-
 
 } // Movie
