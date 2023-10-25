@@ -1,0 +1,42 @@
+CREATE DATABASE IF NOT EXISTS UniversityDB;
+
+USE UniversityDB;
+
+CREATE TABLE Department (
+deptid INT AUTO_INCREMENT PRIMARY KEY,
+depname VARCHAR(255) NOT NULL,
+building VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Professor (
+profid INT AUTO_INCREMENT PRIMARY KEY,
+fname VARCHAR(255) NOT NULL,
+lname VARCHAR(255) NOT NULL,
+deptid INT,
+FOREIGN KEY (deptid) REFERENCES Department(deptid)
+);
+
+CREATE TABLE Student (
+stid INT AUTO_INCREMENT PRIMARY KEY,
+fname VARCHAR(255) NOT NULL,
+lname VARCHAR(255) NOT NULL,
+depid INT,
+FOREIGN KEY (depid) REFERENCES Department(deptid)
+);
+
+CREATE TABLE Course (
+cid INT AUTO_INCREMENT PRIMARY KEY,
+cname VARCHAR(255) NOT NULL,
+profid INT,
+credit INT NOT NULL,
+FOREIGN KEY (profid) REFERENCES Professor(profid)
+);
+
+CREATE TABLE Enrollment (
+eid INT AUTO_INCREMENT PRIMARY KEY,
+stid INT,
+cid INT,
+grade INT,
+FOREIGN KEY (stid) REFERENCES Student(stid),
+FOREIGN KEY (cid) REFERENCES Course(cid)
+);
