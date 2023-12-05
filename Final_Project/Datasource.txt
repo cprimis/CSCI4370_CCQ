@@ -1,0 +1,3 @@
+https://www.kaggle.com/datasets/salvatorerastelli/spotify-and-youtube
+
+Our data was sourced from Kaggle and includes data pertaining to songs on Spotify and YouTube. From the original dataset, we removed fields we felt were unnecessary, such as the YouTube video description variable, and cleaned up accents and symbols that did not translate well.
