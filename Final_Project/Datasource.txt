@@ -4,4 +4,4 @@ Our data was sourced from Kaggle and includes data pertaining to songs on Spotif
 fields we felt were unnecessary, such as the YouTube video description variable, and cleaned up accents and symbols that did not 
 translate well. We then split the data into smaller entities that we felt best represented different aspects of each song (ex. having 
 separate entities for the album info and the artist info).
-We capped the dataset 1507 at rows. For inserting into SQL purposes we split the main dataset into smaller csv files to represent each table.
+We capped the dataset 1507 at rows. For SQL purposes, we split the main dataset into smaller csv files to represent each table.
