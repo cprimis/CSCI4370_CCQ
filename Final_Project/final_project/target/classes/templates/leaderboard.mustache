@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>User Leaderboard</title>
+    <style>
+        .topbar {
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .topbar button {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topbar button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>    
+</head>
+    <body>
+	    <div class="topbar">
+		  <button onclick="location.href='/';">Home</button>
+		  <button onclick="location.href='/insert';">Insert Review</button>
+		  <button onclick="location.href='/delete';">Delete Review</button>  
+		  <button onclick="location.href='/leaderboard';">User Leaderboard</button>  
+		  <button onclick="location.href='/view_reviews_actor';">View Reviews by Actor</button>
+		  <button onclick="location.href='/view_reviews_director';">View Reviews by Director</button>
+		</div>
+        <h2>User Leaderboard</h2>
+        <p>Leave a new review to climb the leaderboard!</p>
+
+        <table align="left", border = 1, cellpadding = 3px, cellspacing = 0px>
+            <tr>
+            	<th>Rank</th>
+                <th>Username</th>
+                <th>Review Count</th>
+            </tr>
+            {{#leaders}}
+                <tr>
+                	<td>{{rank}}</td>
+                    <td>{{username}}</td>
+                    <td>{{review_count}}</td>
+                </tr>
+            {{/leaders}}
+        </table>
+    </body>
+</html>

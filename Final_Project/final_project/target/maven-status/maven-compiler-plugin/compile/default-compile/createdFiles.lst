@@ -1,0 +1,16 @@
+com\Spotify\controller\HomeController.class
+com\Spotify\data\Rating.class
+com\Spotify\controller\ViewReviewActorController.class
+com\Spotify\data\DirectorReview.class
+com\Spotify\controller\WebController.class
+com\Spotify\controller\InsertController.class
+com\Spotify\data\Actor.class
+com\Spotify\data\Leader.class
+com\Spotify\DataApplication.class
+com\Spotify\data\ActorReview.class
+com\Spotify\data\Director.class
+com\Spotify\controller\ViewReviewDirectorController.class
+com\Spotify\controller\DeleteController.class
+com\Spotify\data\Movie.class
+com\Spotify\controller\MyErrorController.class
+com\Spotify\controller\LeaderboardController.class
