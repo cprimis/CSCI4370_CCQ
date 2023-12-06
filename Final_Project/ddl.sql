@@ -78,6 +78,7 @@ CREATE TABLE IF NOT EXISTS YouTube_Video (
   Channel VARCHAR(255),
   Licensed VARCHAR(5),
   Official_Video VARCHAR(5),
+  URL VARCHAR(255),  
   FOREIGN KEY (YouTube_ID) REFERENCES Spotify_YouTube(YouTube_ID)
 );
 
