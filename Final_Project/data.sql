@@ -5713,7 +5713,6 @@ INSERT INTO Human_Connection VALUES
 (1506,1506,'0.169','0.343');
 
 INSERT INTO Track VALUES
-('Track_ID','Track','Duration_ms','Album_ID'),
 ('0','Feel Good Inc.','222640','0'),
 ('1','Rhinestone Eyes','200173','1'),
 ('2','New Gold (feat. Tame Impala and Bootie Brown)','215150','2'),
@@ -7223,7 +7222,6 @@ INSERT INTO Track VALUES
 ('1506','Flight of Icarus - 2015 Remaster','230760','1027');
 
 INSERT INTO Performance VALUES
-('Performance_ID','YouTube_Video_ID','Likes','Comments'),
 ('0','0','6220896','169907'),
 ('1','1','1079128','31003'),
 ('2','2','282142','7399'),
@@ -10242,7 +10240,6 @@ INSERT INTO Spoken_Volume VALUES
 ('1506','1506','-4.829','0.000121','0.0772','0.147');
 
 INSERT INTO YouTube_Video VALUES
-('YouTube_Video_ID','YouTube_ID','Title','Channel','Licensed','official_video'),
 ('0','0','Gorillaz - Feel Good Inc. (Official Video)','Gorillaz','TRUE','TRUE'),
 ('1','1','Gorillaz - Rhinestone Eyes [Storyboard Film] (Official Music Video)','Gorillaz','TRUE','TRUE'),
 ('2','2','Gorillaz - New Gold ft. Tame Impala & Bootie Brown (Official Visualiser)','Gorillaz','TRUE','TRUE'),
