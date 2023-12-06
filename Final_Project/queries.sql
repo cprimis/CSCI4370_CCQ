@@ -15,6 +15,7 @@ SELECT Track.Track_ID, Track.Track, Energy.Energy
   ORDER BY Energy.Energy DESC 
   LIMIT 10;
 
+-- Mean Energy
 SELECT AVG(Energy) as Mean_Energy
   FROM Energy;
 
@@ -25,5 +26,16 @@ SELECT Track.Track_ID, Track.Track, Human_Connection.Liveness, Human_Connection.
   ORDER BY Human_Connection.Valence DESC 
   LIMIT 10;
 
+-- Mean Valence
 SELECT AVG(Valence) as Mean_Valence
   FROM Human_Connection;
+
+--  Top 10 Tracks with Highest Spoken Volumne
+SELECT Track.Track_ID, Track.Track, Spoken_Volume.Loudness, Spoken_Volume.Instrumentalness, Spoken_Volume.Speechiness, Spoken_Volume.Acousticness
+  FROM Track 
+  JOIN Spoken_Volume ON Track.Track_ID = Spoken_Volume.Track_ID 
+  ORDER BY Spoken_Volume.Loudness DESC 
+  LIMIT 10;
+
+SELECT AVG(Loudness) as Mean_Loudness
+  FROM Spoken_Volume;
