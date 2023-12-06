@@ -89,3 +89,9 @@ SELECT Album.Album_ID, Album.Album_Name, COUNT(Track.Track_ID) AS TrackCount
   GROUP BY Album.Album_ID, Album.Album_Name
   ORDER BY TrackCount DESC;
 
+SELECT Track.Track_ID, Track.Track, YouTube_Video.YouTube_ID, YouTube_Video.Title, YouTube_Video.Channel, YouTube_Video.Licensed, YouTube_Video.Official_Video
+  FROM Track
+  JOIN Spotify_YouTube ON Track.Track_ID = Spotify_YouTube.Track_ID
+  JOIN YouTube_Video ON Spotify_YouTube.YouTube_ID = YouTube_Video.YouTube_ID
+  WHERE Track.Track_ID = 'Track_ID';
+
