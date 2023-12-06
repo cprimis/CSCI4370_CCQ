@@ -51,7 +51,7 @@ SELECT Track.Track_ID, Track.Track, Artist_Name, Energy.Energy, Energy.Danceabil
   LIMIT 10;
 
 -- Mean Energy_Danceability
-Select AVG((Energy + Danceability) / 2) as Mean_Energy_Danceability
+SELECT AVG((Energy + Danceability) / 2) as Mean_Energy_Danceability
   FROM Track JOIN Energy ON Track.Track_ID = Energy.Track_ID;
 
 
@@ -84,8 +84,8 @@ SELECT AVG(Loudness) as Mean_Loudness
 
 -- Album leaderboard with the most tracks
 SELECT Album.Album_ID, Album.Album_Name, COUNT(Track.Track_ID) AS TrackCount
-FROM Album
-LEFT JOIN Track ON Album.Album_ID = Track.Album_ID
-GROUP BY Album.Album_ID, Album.Album_Name
-ORDER BY TrackCount DESC;
+  FROM Album
+  LEFT JOIN Track ON Album.Album_ID = Track.Album_ID
+  GROUP BY Album.Album_ID, Album.Album_Name
+  ORDER BY TrackCount DESC;
 
