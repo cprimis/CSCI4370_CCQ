@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>User Leaderboard</title>
+    <title>SyncSounds</title>
     <style>
         .topbar {
             overflow: hidden;
@@ -22,31 +22,35 @@
             background-color: #ddd;
             color: black;
         }
-    </style>    
+    </style>
 </head>
     <body>
 	    <div class="topbar">
 		  <button onclick="location.href='/';">Home</button>
-		  <button onclick="location.href='/insert';">Insert Review</button>
-		  <button onclick="location.href='/delete';">Delete Review</button>  
-		  <button onclick="location.href='/leaderboard';">User Leaderboard</button>  
-		  <button onclick="location.href='/view_reviews_actor';">View Reviews by Actor</button>
-		  <button onclick="location.href='/view_reviews_director';">View Reviews by Director</button>
+		  <button onclick="location.href='/login';">Login</button>
+		  <button onclick="location.href='/insert';">Add Song</button>
+		  <button onclick="location.href='/musicality';">Musicality</button>  
+		  <button onclick="location.href='/energy';">Energy</button>  
+		  <button onclick="location.href='/atmosphere';">Atmosphere</button>
+		  <button onclick="location.href='/volume';">Volume</button>
+		  <button onclick="location.href='/leaderboard';">Album Leaderboard</button>
+		  <button onclick="location.href='/search';">Video Search</button>
 		</div>
-        <h2>User Leaderboard</h2>
-        <p>Leave a new review to climb the leaderboard!</p>
+		
+        <h2>Album Leaderboard</h2>
+        <p>Add songs from your favorite albums!</p>
 
         <table align="left", border = 1, cellpadding = 3px, cellspacing = 0px>
             <tr>
             	<th>Rank</th>
-                <th>Username</th>
-                <th>Review Count</th>
+                <th>Album</th>
+                <th>Track Count</th>
             </tr>
             {{#leaders}}
                 <tr>
                 	<td>{{rank}}</td>
-                    <td>{{username}}</td>
-                    <td>{{review_count}}</td>
+                    <td>{{Album_Name}}</td>
+                    <td>{{TrackCount}}</td>
                 </tr>
             {{/leaders}}
         </table>
