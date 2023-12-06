@@ -83,9 +83,9 @@ CREATE TABLE YouTube_Video (
 
 CREATE TABLE Performance (
   Performance_ID INT PRIMARY KEY,
-  Youtube_ID INT,
+  YouTube_Video_ID INT,
   Likes INT,
   Comments INT,
-  FOREIGN KEY (Youtube_ID) REFERENCES Spotify_YouTube(Youtube_ID)
+  FOREIGN KEY (YouTube_Video_ID) REFERENCES YouTube_Video(YouTube_Video_ID)
 );
 
