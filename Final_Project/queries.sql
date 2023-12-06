@@ -81,3 +81,12 @@ SELECT Track.Track_ID, Track.Track, Artist_Name, Spoken_Volume.Instrumentalness,
 -- Mean Loudness
 SELECT AVG(Loudness) as Mean_Loudness
   FROM Spoken_Volume;
+
+--Album Leaderboard (Most Tracks)
+-- Album leaderboard with the most tracks
+SELECT Album.Album_ID, Album.Album_Name, COUNT(Track.Track_ID) AS TrackCount
+FROM Album
+LEFT JOIN Track ON Album.Album_ID = Track.Album_ID
+GROUP BY Album.Album_ID, Album.Album_Name
+ORDER BY TrackCount DESC;
+
