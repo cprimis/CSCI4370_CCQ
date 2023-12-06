@@ -50,3 +50,11 @@ SELECT Track.Track_ID, Track.Track, Spoken_Volume.Loudness, Spoken_Volume.Instru
 
 SELECT AVG(Loudness) as Mean_Loudness
   FROM Spoken_Volume;
+
+SELECT Track.Track_ID, Track.Track, Energy.Energy, Energy.Danceability, 
+  (Energy + Danceability) / 2 AS Energy_Danceability
+FROM Track
+JOIN Energy ON Track.Track_ID = Energy.Track_ID
+ORDER BY Energy_Danceability DESC
+LIMIT 10;
+
