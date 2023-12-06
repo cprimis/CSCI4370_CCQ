@@ -76,8 +76,8 @@ CREATE TABLE IF NOT EXISTS YouTube_Video (
   YouTube_ID INT,
   Title VARCHAR(255),
   Channel VARCHAR(255),
-  Licensed BOOLEAN,
-  Official_Video BOOLEAN,
+  Licensed VARCHAR(5),
+  Official_Video VARCHAR(5),
   FOREIGN KEY (YouTube_ID) REFERENCES Spotify_YouTube(YouTube_ID)
 );
 
