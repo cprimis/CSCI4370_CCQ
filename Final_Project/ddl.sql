@@ -8,12 +8,12 @@ CREATE TABLE IF NOT EXISTS users (
     password CHAR(128) NOT NULL
 );
 
-CREATE TABLE Artist (
+CREATE TABLE IF NOT EXISTS Artist (
   Artist_Name VARCHAR(255),
   Artist_ID INT PRIMARY KEY
 );
 
-CREATE TABLE Album (
+CREATE TABLE IF NOT EXISTS Album (
   Album_Name VARCHAR(255),
   Album_ID INT PRIMARY KEY,
   Album_type VARCHAR(255),
@@ -21,7 +21,7 @@ CREATE TABLE Album (
   FOREIGN KEY (Artist_ID) REFERENCES Artist(Artist_ID)
 );
 
-CREATE TABLE Track (
+CREATE TABLE IF NOT EXISTS Track (
   Track_ID INT PRIMARY KEY,
   Track VARCHAR(255),
   Duration_ms INT,
@@ -29,7 +29,7 @@ CREATE TABLE Track (
   FOREIGN KEY (Album_ID) REFERENCES Album(Album_ID)
 );
 
-CREATE TABLE Musicality (
+CREATE TABLE IF NOT EXISTS Musicality (
   Musicality_ID INT PRIMARY KEY,
   Track_ID INT,
   Tempo DECIMAL(10, 5),
@@ -37,7 +37,7 @@ CREATE TABLE Musicality (
   FOREIGN KEY (Track_ID) REFERENCES Track(Track_ID)
 );
 
-CREATE TABLE Energy (
+CREATE TABLE IF NOT EXISTS Energy (
   Energy_ID INT PRIMARY KEY,
   Track_ID INT,
   Danceability DECIMAL(10, 5),
@@ -45,7 +45,7 @@ CREATE TABLE Energy (
   FOREIGN KEY (Track_ID) REFERENCES Track(Track_ID)
 );
 
-CREATE TABLE Human_Connection (
+CREATE TABLE IF NOT EXISTS Human_Connection (
   Human_Connection_ID INT PRIMARY KEY,
   Track_ID INT,
   Liveness DECIMAL(10, 5),
@@ -53,7 +53,7 @@ CREATE TABLE Human_Connection (
   FOREIGN KEY (Track_ID) REFERENCES Track(Track_ID)
 );
 
-CREATE TABLE Spoken_Volume (
+CREATE TABLE IF NOT EXISTS Spoken_Volume (
   Spoken_Volume_ID INT PRIMARY KEY,
   Track_ID INT,
   Loudness DECIMAL(10, 5),
@@ -63,7 +63,7 @@ CREATE TABLE Spoken_Volume (
   FOREIGN KEY (Track_ID) REFERENCES Track(Track_ID)
 );
 
-CREATE TABLE Spotify_YouTube (
+CREATE TABLE IF NOT EXISTS Spotify_YouTube (
   YouTube_ID INT PRIMARY KEY,
   Track_ID INT,
   Views INT,
@@ -71,7 +71,7 @@ CREATE TABLE Spotify_YouTube (
   FOREIGN KEY (Track_ID) REFERENCES Track(Track_ID)
 );
 
-CREATE TABLE YouTube_Video (
+CREATE TABLE IF NOT EXISTS YouTube_Video (
   YouTube_Video_ID INT PRIMARY KEY,
   YouTube_ID INT,
   Title VARCHAR(255),
@@ -81,7 +81,7 @@ CREATE TABLE YouTube_Video (
   FOREIGN KEY (YouTube_ID) REFERENCES Spotify_YouTube(YouTube_ID)
 );
 
-CREATE TABLE Performance (
+CREATE TABLE IF NOT EXISTS Performance (
   Performance_ID INT PRIMARY KEY,
   YouTube_Video_ID INT,
   Likes INT,
