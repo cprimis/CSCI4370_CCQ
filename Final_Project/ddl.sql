@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS Spoken_Volume (
 CREATE TABLE IF NOT EXISTS Spotify_YouTube (
   YouTube_ID INT PRIMARY KEY,
   Track_ID INT,
-  Views INT,
+  Views BIGINT,
   Streams INT,
   FOREIGN KEY (Track_ID) REFERENCES Track(Track_ID)
 );
