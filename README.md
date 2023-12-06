@@ -7,6 +7,8 @@ University of Georgia CSCI 4370
 
 <a href="https://docs.google.com/document/d/17gJx8EhMoCUCZdZNUXJ7pkfUJmLMLSDDPwYPGeSoXLI/edit?usp=sharing">Google Doc Link</a>
 
+<a href="https://docs.google.com/document/d/1ulCo64BLYJ2SbdFc-6wSbDWhFBd4NuBVsVg2wshjuMg/edit?usp=sharing">Final Project Google Doc Link</a>
+
 ##  Assignment 1 Due September 10th!
 
 
