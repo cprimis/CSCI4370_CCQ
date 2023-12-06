@@ -10239,8 +10239,7 @@ INSERT INTO Spotify_YouTube VALUES
 ('1505','1505','41843225','89794397'),
 ('1506','1506','12288151','37018158');
 
-INSERT INTO `YouTube_Video` VALUES
-('YouTube_Video_ID','YouTube_ID','Title','Channel','Licensed','official_video','Url_youtube'),
+INSERT INTO YouTube_Video VALUES
 ('0','0','Gorillaz - Feel Good Inc. (Official Video)','Gorillaz','TRUE','TRUE','https://www.youtube.com/watch?v=HyHNuVaZJ-k'),
 ('1','1','Gorillaz - Rhinestone Eyes [Storyboard Film] (Official Music Video)','Gorillaz','TRUE','TRUE','https://www.youtube.com/watch?v=yYDmaexVHic'),
 ('2','2','Gorillaz - New Gold ft. Tame Impala & Bootie Brown (Official Visualiser)','Gorillaz','TRUE','TRUE','https://www.youtube.com/watch?v=qJa-VFwPpYA'),
