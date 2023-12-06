@@ -1878,7 +1878,7 @@ INSERT INTO Track VALUES
 ('689','Besos En Guerra','231533','462'),
 ('690','Es Por Ti','250693','463'),
 ('691','506','180552','464'),
-('692','Y, Â¿Si Fuera Ella? - + Es +','250000','#NAME?'),
+('692','Y, Â¿Si Fuera Ella? - + Es +','250000','502'),
 ('693','La Camisa Negra','216707','466'),
 ('694','A Dios Le Pido','205373','463'),
 ('695','Nada Valgo Sin Tu Amor','196360','466'),
