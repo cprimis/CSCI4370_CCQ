@@ -87,7 +87,7 @@ SELECT Album.Album_ID, Album.Album_Name, COUNT(Track.Track_ID) AS TrackCount
   FROM Album
   LEFT JOIN Track ON Album.Album_ID = Track.Album_ID
   GROUP BY Album.Album_ID, Album.Album_Name
-  ORDER BY TrackCount DESC;
+  ORDER BY TrackCount DESC LIMIT 50;
 
 -- Look up YouTube Video based on Track ID
 SELECT Track.Track_ID, Track.Track, YouTube_Video.YouTube_ID, YouTube_Video.Title, YouTube_Video.Channel, YouTube_Video.Licensed, YouTube_Video.Official_Video
