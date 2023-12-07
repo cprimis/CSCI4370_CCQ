@@ -1,0 +1,1 @@
+-- Lists the statements used to create indexes (queries that were affected by the indexes and time consumption before and after adding the index)
