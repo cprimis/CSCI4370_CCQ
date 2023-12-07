@@ -1,0 +1,1 @@
+-- Describes the approach you used to securely store user passwords
