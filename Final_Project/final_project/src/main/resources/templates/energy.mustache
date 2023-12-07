@@ -82,5 +82,25 @@
         </table>
         
         <h3>Average Danceability: {{DanceabilityAvg}}</h3>
+        
+        <h3>Top 10 Songs for Combined Energy + Danceability:</h3>
+        <table border = 1, cellpadding = 3px, cellspacing = 0px>
+            <tr>
+            	<th>Rank</th>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Energy + Danceability</th>
+            </tr>
+            {{#Energy_Danceability}}
+                <tr>
+                	<td>{{rank}}</td>
+                    <td>{{Track}}</td>
+                    <td>{{Artist}}</td>
+                    <td>{{Stat}}</td>
+                </tr>
+            {{/Energy_Danceability}}
+        </table>
+        
+        <h3>Average Combined Energy + Danceability: {{EnergyDanceabilityAvg}}</h3>
     </body>
 </html>
