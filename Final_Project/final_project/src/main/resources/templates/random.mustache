@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SyncSounds</title>
+    <style>
+        .topbar {
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .topbar button {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topbar button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+    <body>
+	    <div class="topbar">
+		  <button onclick="location.href='/';">Home</button>
+		  <button onclick="location.href='/login';">Login</button>
+		  <button onclick="location.href='/insert';">Add Song</button>
+		  <button onclick="location.href='/musicality';">Musicality</button>  
+		  <button onclick="location.href='/energy';">Energy</button>  
+		  <button onclick="location.href='/atmosphere';">Atmosphere</button>
+		  <button onclick="location.href='/volume';">Volume</button>
+		  <button onclick="location.href='/leaderboard';">Album Leaderboard</button>
+		  <button onclick="location.href='/random';">Random Song & Video</button>
+		</div>
+		
+        <h2>Random Song & Video</h2>
+        <p>Refresh the page for a new song!</p>
+
+       	<iframe width="560" height="315" src={{RandomSong.URL}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+    	<p>
+    	{{#RandomSong}}
+    	Song: {{Track}} <br>
+    	Artist: {{Artist}} <br>
+    	<br>
+    	Video: {{Title}} <br>
+        Channel: {{Channel}} <br>
+        <br>
+        This video is {{Licensed}} and {{Official}}. As of February 7th, 2023, this video has {{Likes}} like and {{Comments}} comments.
+    	{{/RandomSong}}
+    	</p>
+    </body>
+</html>
