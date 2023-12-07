@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SyncSounds: Musicality</title>
+    <style>
+        .topbar {
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .topbar button {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topbar button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+    <body>
+	    <div class="topbar">
+		  <button onclick="location.href='/';">Home</button>
+		  <button onclick="location.href='/login';">Login</button>
+		  <button onclick="location.href='/insert';">Add Song</button>
+		  <button onclick="location.href='/musicality';">Musicality</button>  
+		  <button onclick="location.href='/energy';">Energy</button>  
+		  <button onclick="location.href='/atmosphere';">Atmosphere</button>
+		  <button onclick="location.href='/volume';">Volume</button>
+		  <button onclick="location.href='/leaderboard';">Album Leaderboard</button>
+		  <button onclick="location.href='/random';">Random Song & Video</button>
+		</div>
+		
+        <h2>Musicality</h2>
+        
+        <b>Tempo:</b> the overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.<br>
+	    
+        <h3>Top 10 Songs for Tempo:</h3>
+        <table border = 1, cellpadding = 3px, cellspacing = 0px>
+            <tr>
+            	<th>Rank</th>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Tempo</th>
+            </tr>
+            {{#Tempos}}
+                <tr>
+                	<td>{{rank}}</td>
+                    <td>{{Track}}</td>
+                    <td>{{Artist}}</td>
+                    <td>{{Stat}}</td>
+                </tr>
+            {{/Tempos}}
+        </table>
+        
+        <h3>Average Tempo: {{TempoAvg}}</h3>
+        
+        <b>Key:</b> the key the track is in. Integers map to pitches using standard Pitch Class notation. E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on. If no key was detected, the value is -1.<br>
+		
+	    <h3>Average Key: {{KeyLetter}} ({{KeyAvg}})</h3>
+    </body>
+</html>

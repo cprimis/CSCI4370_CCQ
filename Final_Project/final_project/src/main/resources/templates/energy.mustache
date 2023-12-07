@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SyncSounds: Energy</title>
+    <style>
+        .topbar {
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .topbar button {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topbar button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+    <body>
+	    <div class="topbar">
+		  <button onclick="location.href='/';">Home</button>
+		  <button onclick="location.href='/login';">Login</button>
+		  <button onclick="location.href='/insert';">Add Song</button>
+		  <button onclick="location.href='/musicality';">Musicality</button>  
+		  <button onclick="location.href='/energy';">Energy</button>  
+		  <button onclick="location.href='/atmosphere';">Atmosphere</button>
+		  <button onclick="location.href='/volume';">Volume</button>
+		  <button onclick="location.href='/leaderboard';">Album Leaderboard</button>
+		  <button onclick="location.href='/random';">Random Song & Video</button>
+		</div>
+		
+        <h2>Energy</h2>
+        
+        <b>Energy:</b> is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.<br>
+        
+        <h3>Top 10 Songs for Energy:</h3>
+        <table border = 1, cellpadding = 3px, cellspacing = 0px>
+            <tr>
+            	<th>Rank</th>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Energy</th>
+            </tr>
+            {{#Energies}}
+                <tr>
+                	<td>{{rank}}</td>
+                    <td>{{Track}}</td>
+                    <td>{{Artist}}</td>
+                    <td>{{Stat}}</td>
+                </tr>
+            {{/Energies}}
+        </table>
+        
+        <h3>Average Energy: {{EnergyAvg}}</h3>
+
+		<b>Danceability:</b> describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.<br>
+        
+        <h3>Top 10 Songs for Danceability:</h3>
+        <table border = 1, cellpadding = 3px, cellspacing = 0px>
+            <tr>
+            	<th>Rank</th>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Danceability</th>
+            </tr>
+            {{#Danceabilities}}
+                <tr>
+                	<td>{{rank}}</td>
+                    <td>{{Track}}</td>
+                    <td>{{Artist}}</td>
+                    <td>{{Stat}}</td>
+                </tr>
+            {{/Danceabilities}}
+        </table>
+        
+        <h3>Average Danceability: {{DanceabilityAvg}}</h3>
+    </body>
+</html>
