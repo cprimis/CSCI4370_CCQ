@@ -24,13 +24,13 @@ public class RandomController {
             Connection connection = DriverManager.getConnection(url, user, password);
 
             Statement stmt = connection.createStatement();
-            String query = "SELECT Track.Track_ID " + "FROM Track "
+            String getIDs = "SELECT Track.Track_ID " + "FROM Track "
                     + "JOIN Spotify_YouTube ON Track.Track_ID = Spotify_YouTube.Track_ID "
                     + "JOIN YouTube_Video ON Spotify_YouTube.YouTube_ID = YouTube_Video.YouTube_ID "
                     + "JOIN Performance ON YouTube_Video.YouTube_Video_ID = Performance.YouTube_Video_ID "
                     + "WHERE YouTube_Video.URL_YouTube IS NOT NULL";
 
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = stmt.executeQuery(getIDs);
 
             List<Integer> IDs = new ArrayList<>();
             while (rs.next()) {
@@ -40,14 +40,14 @@ public class RandomController {
             Random randomizer = new Random();
             int ID = IDs.get(randomizer.nextInt(IDs.size())).intValue();
 
-            String query2 = "SELECT Track.Track, Artist.Artist_Name, YouTube_Video.Title, YouTube_Video.Channel, YouTube_Video.Licensed, YouTube_Video.Official_Video, YouTube_Video.URL_YouTube, Performance.Likes, Performance.Comments "
+            String query = "SELECT Track.Track, Artist.Artist_Name, YouTube_Video.Title, YouTube_Video.Channel, YouTube_Video.Licensed, YouTube_Video.Official_Video, YouTube_Video.URL_YouTube, Performance.Likes, Performance.Comments "
                     + "FROM Track " + "JOIN Spotify_YouTube ON Track.Track_ID = Spotify_YouTube.Track_ID "
                     + "JOIN YouTube_Video ON Spotify_YouTube.YouTube_ID = YouTube_Video.YouTube_ID "
                     + "JOIN Performance ON YouTube_Video.YouTube_Video_ID = Performance.YouTube_Video_ID "
                     + "JOIN Album ON Track.Album_ID = Album.Album_ID "
                     + "JOIN Artist ON Album.Artist_ID = Artist.Artist_ID " + "WHERE Track.Track_ID = " + ID;
 
-            ResultSet rs2 = stmt.executeQuery(query2);
+            ResultSet rs2 = stmt.executeQuery(query);
             rs2.next();
 
             String isLicensed;
