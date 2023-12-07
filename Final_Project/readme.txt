@@ -12,7 +12,7 @@ Chris Primis:
 
 Technologies/Libraries Used:
 
-Database Name:
+Database Name: Spotify
 
 Database Username:
 Password:
