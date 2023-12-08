@@ -37,19 +37,38 @@
 		  <button onclick="location.href='/random';">Random Song & Video</button>
 		</div>
 		
-        <h2>Add a New Song</h2>
+        <h2>Search for a new song and add a New Song to Database using found Spotify ID</h2>
         
-        <form action="/submitinsert" method="POST">
-            <input type="text" name="real_name" placeholder="Real Name">
-            <input type="text" name="username" placeholder="Username">
-            <select name="movie_name">
-            	<option>--Select Movie--</option>
-            	{{#movies}}
-            	<option>{{movie_name}}</option>
-   	            {{/movies}}
-            <input type="text" name="user_rating" placeholder="Rating (0.0-10.0)">
-            <input type="text" name="user_review" placeholder="Review">
+        <form action="/submitsearch" method="POST">
+            <input type="text" name="song_name" placeholder="Song Name">
+            <input type="text" name="artist" placeholder="Artist">
             <input type="submit"/>
-        </form>        
+        </form>
+        
+        <h2>Add Song to Database using selected Spotify ID from Table</h2>
+            
+        <form action="/submitinsert" method="POST">
+            <input type="text" name="spotify_id" placeholder="Spotify ID">
+            <input type="submit"/>
+        </form>            
+        <p></p>
+        <table align="left", border = 1, cellpadding = 3px, cellspacing = 0px>
+            <tr>
+            	<th>Song Name</th>
+                <th>Artist(s)</th>
+                <th>Album</th>
+                <th>Spotify ID</th>
+                <th>Spotify URI</th>
+            </tr>
+            {{#track_list}}
+                <tr>
+                	<td>{{name}}</td>
+                    <td>{{artists_toString}}</td>
+                    <td>{{album_name}}</td>                    
+                    <td>{{id}}</td>
+                    <td>{{uri}}</td>
+                </tr>
+            {{/track_list}}
+        </table>
     </body>
 </html>

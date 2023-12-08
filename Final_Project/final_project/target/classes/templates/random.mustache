@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>SyncSounds: Albums</title>
+    <title>SyncSounds: Random</title>
     <style>
         .topbar {
             overflow: hidden;
@@ -37,24 +37,21 @@
 		  <button onclick="location.href='/random';">Random Song & Video</button>
 		</div>
 		
-        <h2>Album Leaderboard</h2>
-        <p>Add songs from your favorite albums!</p>
+        <h2>Random Song & Video</h2>
+        <p>Refresh the page for a new song!</p>
 
-        <table align="left", border = 1, cellpadding = 3px, cellspacing = 0px>
-            <tr>
-            	<th>Rank</th>
-                <th>Album</th>
-                <th>Artist</th>
-                <th>Track Count</th>
-            </tr>
-            {{#leaders}}
-                <tr>
-                	<td>{{rank}}</td>
-                    <td>{{Album}}</td>
-                    <td>{{Artist}}</td>
-                    <td>{{TrackCount}}</td>
-                </tr>
-            {{/leaders}}
-        </table>
+       	<iframe width="560" height="315" src={{RandomSong.URL}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+    	<p>
+    	{{#RandomSong}}
+    	Song: {{Track}} <br>
+    	Artist: {{Artist}} <br>
+    	<br>
+    	Video: {{Title}} <br>
+        Channel: {{Channel}} <br>
+        <br>
+        This video is {{Licensed}} and {{Official}}. As of February 7th, 2023, this video has {{Likes}} like and {{Comments}} comments.
+    	{{/RandomSong}}
+    	</p>
     </body>
 </html>

@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>New Review</title>
-        <style>
+    <title>SyncSounds</title>
+    <style>
         .topbar {
             overflow: hidden;
             background-color: #fff;
@@ -27,31 +27,21 @@
     <body>
 	    <div class="topbar">
 		  <button onclick="location.href='/';">Home</button>
-		  <button onclick="location.href='/insert';">Insert Review</button>
-		  <button onclick="location.href='/delete';">Delete Review</button>  
-		  <button onclick="location.href='/leaderboard';">User Leaderboard</button>  
-		  <button onclick="location.href='/view_reviews_actor';">View Reviews by Actor</button>
-		  <button onclick="location.href='/view_reviews_director';">View Reviews by Director</button>
+		  <button onclick="location.href='/login';">Login</button>
+		  <button onclick="location.href='/insert';">Add Song</button>
+		  <button onclick="location.href='/musicality';">Musicality</button>  
+		  <button onclick="location.href='/energy';">Energy</button>  
+		  <button onclick="location.href='/atmosphere';">Atmosphere</button>
+		  <button onclick="location.href='/volume';">Volume</button>
+		  <button onclick="location.href='/leaderboard';">Album Leaderboard</button>
+		  <button onclick="location.href='/random';">Random Song & Video</button>
 		</div>
-        <h2>Home</h2>
-        <img src="https://cdn1.vox-cdn.com/thumbor/ysXEdnqxuPrPYDzzXP-dU5u_A68=/0x0:1920x1080/1600x900/cdn0.vox-cdn.com/uploads/chorus_image/image/47327740/20151003170110.0.0.0.jpg" alt="He's so sad :(" width="800" height="450">        
-        <h2>All Reviews</h2>
-
-        <table align="left", border = 1, cellpadding = 3px, cellspacing = 0px>
-            <tr>
-                <th>Username</th>
-                <th>Movie</th>
-                <th>User Rating</th>
-                <th>User Review</th>
-            </tr>
-            {{#ratings}}
-                <tr>
-                    <td>{{username}}</td>
-                    <td>{{movie_name}}</td>
-                    <td>{{user_rating}}</td>
-                    <td>{{user_review}}</td>
-                </tr>
-            {{/ratings}}
-        </table>
+		
+        <h2>Welcome to SyncSounds!</h2>
+        
+        <h3>
+        	SyncSounds is a website used to analyze songs using the characteristics given to them by Spotify. <br>
+        	These numeric characteristics measure a wide range of information about each song, which the Spotify API then uses to tailor its recommendations, radios, and playlists towards each listeners' preferences.
+        </h3>
     </body>
 </html>

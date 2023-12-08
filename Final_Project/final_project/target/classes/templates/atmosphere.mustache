@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SyncSounds: Atmosphere</title>
+    <style>
+        .topbar {
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .topbar button {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topbar button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+    <body>
+	    <div class="topbar">
+		  <button onclick="location.href='/';">Home</button>
+		  <button onclick="location.href='/login';">Login</button>
+		  <button onclick="location.href='/insert';">Add Song</button>
+		  <button onclick="location.href='/musicality';">Musicality</button>  
+		  <button onclick="location.href='/energy';">Energy</button>  
+		  <button onclick="location.href='/atmosphere';">Atmosphere</button>
+		  <button onclick="location.href='/volume';">Volume</button>
+		  <button onclick="location.href='/leaderboard';">Album Leaderboard</button>
+		  <button onclick="location.href='/random';">Random Song & Video</button>
+		</div>
+		
+        <h2>Atmosphere</h2>
+        
+        <b>Valence:</b> a measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).
+
+        <h3>Top 10 Songs for Valence:</h3>
+        <table border = 1, cellpadding = 3px, cellspacing = 0px>
+            <tr>
+            	<th>Rank</th>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Valence</th>
+            </tr>
+            {{#Valences}}
+                <tr>
+                	<td>{{rank}}</td>
+                    <td>{{Track}}</td>
+                    <td>{{Artist}}</td>
+                    <td>{{Stat}}</td>
+                </tr>
+            {{/Valences}}
+        </table>
+        
+        <h3>Average Valence: {{ValenceAvg}}</h3>
+        
+        <b>Liveness:</b> detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.<br>
+        
+        <h3>Top 10 Songs for Liveness:</h3>
+        <table border = 1, cellpadding = 3px, cellspacing = 0px>
+            <tr>
+            	<th>Rank</th>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Liveness</th>
+            </tr>
+            {{#Livenesses}}
+                <tr>
+                	<td>{{rank}}</td>
+                    <td>{{Track}}</td>
+                    <td>{{Artist}}</td>
+                    <td>{{Stat}}</td>
+                </tr>
+            {{/Livenesses}}
+        </table>
+        
+        <h3>Average Liveness: {{LivenessAvg}}</h3>
+    </body>
+</html>

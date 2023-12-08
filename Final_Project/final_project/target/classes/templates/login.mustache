@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>SyncSounds: Albums</title>
+    <title>SyncSounds</title>
     <style>
         .topbar {
             overflow: hidden;
@@ -37,24 +37,13 @@
 		  <button onclick="location.href='/random';">Random Song & Video</button>
 		</div>
 		
-        <h2>Album Leaderboard</h2>
-        <p>Add songs from your favorite albums!</p>
+        <h2>Login</h2>
+        
+        <form action="/submitlogin" method="POST">
+            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="pw" placeholder="Password">
 
-        <table align="left", border = 1, cellpadding = 3px, cellspacing = 0px>
-            <tr>
-            	<th>Rank</th>
-                <th>Album</th>
-                <th>Artist</th>
-                <th>Track Count</th>
-            </tr>
-            {{#leaders}}
-                <tr>
-                	<td>{{rank}}</td>
-                    <td>{{Album}}</td>
-                    <td>{{Artist}}</td>
-                    <td>{{TrackCount}}</td>
-                </tr>
-            {{/leaders}}
-        </table>
+            <input type="submit"/>
+        </form>        
     </body>
 </html>
