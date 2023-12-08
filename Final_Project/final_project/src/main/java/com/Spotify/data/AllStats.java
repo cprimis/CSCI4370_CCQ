@@ -5,7 +5,7 @@ public class AllStats {
     private String Artist;
     private String Album;
     private double Tempo;
-    private double Key;
+    private String Key;
     private double Energy;
     private double Danceability;
     private double Valence;
@@ -15,7 +15,7 @@ public class AllStats {
     private double Speechiness;
     private double Acousticness;
 
-    public AllStats(String Track, String Artist, String Album, double Tempo, double Key, double Energy, double Danceability,
+    public AllStats(String Track, String Artist, String Album, double Tempo, String Key, double Energy, double Danceability,
             double Valence, double Liveness, double Loudness, double Instrumentalness, double Speechiness,
             double Acousticness) {
         this.Track = Track;
