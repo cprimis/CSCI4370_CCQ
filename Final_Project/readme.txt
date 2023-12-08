@@ -6,11 +6,11 @@ Team Member Names: Tushita Bansal, Jeremiah Haudey, Alex Chiang, Paola Mora Gala
 Group Member Roles (tasks done):
 Tushita Bansal: 
 Jeremiah Haudey:
-Alex Chiang: 
+Alex Chiang: dynamic pages, data creation
 Paola Mora Galazzo: 
 Chris Primis:
 
-Technologies/Libraries Used:
+Technologies/Libraries Used: SQL, Java, Docker, Eclipse 
 
 Database Name: Spotify
 
