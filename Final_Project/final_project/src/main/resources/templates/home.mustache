@@ -27,7 +27,8 @@
     <body>
 	    <div class="topbar">
 		  <button onclick="location.href='/';">Home</button>
-		  <button onclick="location.href='/login';">Login</button>
+		  <button onclick="location.href='/login';">Login</button>	
+ 		  <button onclick="location.href='/register';">Register</button>	  
 		  <button onclick="location.href='/insert';">Add Song</button>
 		  <button onclick="location.href='/musicality';">Musicality</button>  
 		  <button onclick="location.href='/energy';">Energy</button>  
@@ -43,41 +44,5 @@
         	SyncSounds is a website used to analyze songs using the characteristics given to them by Spotify. <br>
         	These numeric characteristics measure a wide range of information about each song, which the Spotify API then uses to tailor its recommendations, radios, and playlists towards each listeners' preferences.
         </h3>
-        
-        <h3>All Songs Currently in Database:</h3>
-        <table border = 1, cellpadding = 3px, cellspacing = 0px>
-            <tr>
-            	<th>Song</th>
-                <th>Artist</th>
-                <th>Album</th>
-                <th>Tempo</th>
-                <th>Key</th>
-                <th>Energy</th>
-                <th>Danceability</th>
-                <th>Valence</th>
-                <th>Liveness</th>
-                <th>Loudness</th>
-                <th>Instrumentalness</th>
-                <th>Speechiness</th>
-                <th>Acousticness</th>
-            </tr>
-            {{#Songs}}
-                <tr>
-                    <td>{{Track}}</td>
-                    <td>{{Artist}}</td>
-                    <td>{{Album}}</td>
-	                <td>{{Tempo}}</td>
-	                <td>{{Key}}</td>
-	                <td>{{Energy}}</td>
-	                <td>{{Danceability}}</td>
-	                <td>{{Valence}}</td>
-	                <td>{{Liveness}}</td>
-	                <td>{{Loudness}}</td>
-	                <td>{{Instrumentalness}}</td>
-	                <td>{{Speechiness}}</td>
-	                <td>{{Acousticness}}</td>
-                </tr>
-            {{/Songs}}
-        </table>
     </body>
 </html>

@@ -3,6 +3,9 @@ package com.Spotify.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import com.Spotify.data.*;
+
+import jakarta.servlet.http.HttpServletRequest;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +17,11 @@ public class AtmosphereController {
     String password = "mysqlpass";
 
     @GetMapping("/atmosphere")
-    public ModelAndView atmosphere() {
+    public ModelAndView atmosphere(HttpServletRequest request) {
+        if(LoginController.isLoggedIn(request) == false) {
+        	System.out.println("User is not logged in");
+        	return new ModelAndView("login");
+        } // if
         ModelAndView mv = new ModelAndView("atmosphere");
         try {
             Connection connection = DriverManager.getConnection(url, user, password);

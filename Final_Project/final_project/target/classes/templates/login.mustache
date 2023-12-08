@@ -28,6 +28,7 @@
 	    <div class="topbar">
 		  <button onclick="location.href='/';">Home</button>
 		  <button onclick="location.href='/login';">Login</button>
+ 		  <button onclick="location.href='/register';">Register</button>		  
 		  <button onclick="location.href='/insert';">Add Song</button>
 		  <button onclick="location.href='/musicality';">Musicality</button>  
 		  <button onclick="location.href='/energy';">Energy</button>  
@@ -38,12 +39,15 @@
 		</div>
 		
         <h2>Login</h2>
-        
+
         <form action="/submitlogin" method="POST">
             <input type="text" name="username" placeholder="Username">
             <input type="text" name="pw" placeholder="Password">
 
             <input type="submit"/>
         </form>        
+        <p></p>
+        <p></p>
+        <button onclick="location.href='/register';">Register</button>
     </body>
 </html>

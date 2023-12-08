@@ -3,6 +3,9 @@ package com.Spotify.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import com.Spotify.data.*;
+
+import jakarta.servlet.http.HttpServletRequest;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +19,9 @@ public class VolumeController {
 
 
     @GetMapping("/volume")
-    public ModelAndView volume() {
+    public ModelAndView volume(HttpServletRequest request) {
+
+
         ModelAndView mv = new ModelAndView("volume");
         try {
             Connection connection = DriverManager.getConnection(url, user, password);

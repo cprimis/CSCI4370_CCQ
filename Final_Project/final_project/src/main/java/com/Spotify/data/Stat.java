@@ -15,6 +15,6 @@ public class Stat {
 
     @Override
     public String toString() {
-        return "Stat{" + "rank=" + rank + ", Track=" + Track + ", Artist=" + Artist + ", Stat='" + Stat + '}';
+        return "Stat{" + "rank=" + rank + "Track=" + Track + "Artist=" + Artist + ", Stat='" + Stat + '}';
     } // toString
 }

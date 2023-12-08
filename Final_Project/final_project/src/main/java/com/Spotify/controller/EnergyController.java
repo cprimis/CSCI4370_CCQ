@@ -5,6 +5,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.Spotify.data.*;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +18,11 @@ public class EnergyController {
     String password = "mysqlpass";
 
     @GetMapping("/energy")
-    public ModelAndView energy() {
+    public ModelAndView energy(HttpServletRequest request) {
+        if(LoginController.isLoggedIn(request) == false) {
+        	System.out.println("User is not logged in");
+        	return new ModelAndView("login");
+        } // if
         ModelAndView mv = new ModelAndView("energy");
 
         try {

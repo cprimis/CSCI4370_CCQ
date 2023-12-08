@@ -14,6 +14,8 @@ import se.michaelthelin.spotify.requests.data.search.simplified.SearchTracksRequ
 import se.michaelthelin.spotify.requests.data.tracks.GetTrackRequest;
 import com.Spotify.data.*;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -212,7 +214,11 @@ public class InsertController {
     
     
     @GetMapping("/insert")
-    public ModelAndView leaderboard() {
+    public ModelAndView leaderboard(HttpServletRequest request) {
+        if(LoginController.isLoggedIn(request) == false) {
+        	System.out.println("User is not logged in");
+        	return new ModelAndView("login");
+        } // if
     	ModelAndView mv = new ModelAndView("insert");
         try {
             Connection connection = DriverManager.getConnection(url, user, password);
@@ -226,7 +232,11 @@ public class InsertController {
     }
     
     @PostMapping("/submitsearch")
-    public ModelAndView formsubmitsearch(String song_name, String artist) {
+    public ModelAndView formsubmitsearch(String song_name, String artist, HttpServletRequest request) {
+        if(LoginController.isLoggedIn(request) == false) {
+        	System.out.println("User is not logged in");
+        	return new ModelAndView("login");
+        } // if
     	ModelAndView mv = new ModelAndView("insert");
         try {
             Connection connection = DriverManager.getConnection(url, user, password);
@@ -248,12 +258,16 @@ public class InsertController {
     } // formsubmitsearch
     
     @PostMapping("/submitinsert")
-    public ModelAndView formsubmitinsert(String spotify_id) {
+    public ModelAndView formsubmitinsert(String spotify_id, HttpServletRequest request) {
+        if(LoginController.isLoggedIn(request) == false) {
+        	System.out.println("User is not logged in");
+        	return new ModelAndView("login");
+        } // if
     	ModelAndView mv = new ModelAndView("insert");
         try {
             Connection connection = DriverManager.getConnection(url, user, password);
-//          String test_search = "1oqNnxue9r4IvSwrsqstW2";
-//          Track test_track = searchTrack(test_search);
+//            String test_search = "1oqNnxue9r4IvSwrsqstW2";
+//            Track test_track = searchTrack(spotify_id);
             insertTrack(spotify_id);
 
    
