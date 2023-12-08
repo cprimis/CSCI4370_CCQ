@@ -284,6 +284,16 @@ mysql> UPDATE mysql.user SET password=PASSWORD('new_pass') WHERE user='root';
 ```
 
 
+
+```bash
+## Switch back to the mysqld_safe terminal and kill the process using Control + \
+$ /etc/init.d/mysql start
+```
+
+Your commands may vary depending on your OS.
+
+
+```bash
     public static String readAllCookies(HttpServletRequest request) {
 
         Cookie[] cookies = request.getCookies();
@@ -303,9 +313,4 @@ mysql> UPDATE mysql.user SET password=PASSWORD('new_pass') WHERE user='root';
 
         return "No cookies";
     }
-```bash
-## Switch back to the mysqld_safe terminal and kill the process using Control + \
-$ /etc/init.d/mysql start
 ```
-
-Your commands may vary depending on your OS.
