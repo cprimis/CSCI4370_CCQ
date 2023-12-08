@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------------------------------------------
 
--- Top 10 tracks with Highest Tempo (from Musicality Table)
+-- All tracks in the database w/ all characteristics
 -- http://localhost:8080
 SELECT Track.Track, Artist_Name, Album_Name, Musicality.Tempo, Musicality.Musicality_Key, 
     Energy.Energy, Energy.Danceability, Human_Connection.Valence, Human_Connection.Liveness,
@@ -13,6 +13,11 @@ SELECT Track.Track, Artist_Name, Album_Name, Musicality.Tempo, Musicality.Musica
   JOIN Album ON Track.Album_ID = Album.Album_ID
   JOIN Artist on Album.Artist_ID = Artist.Artist_ID
   ORDER BY Track.Track;
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- ??
+-- http://localhost:8080/insert
 
 -------------------------------------------------------------------------------------------------------------------
 
