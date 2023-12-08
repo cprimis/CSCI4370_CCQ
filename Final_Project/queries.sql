@@ -1,6 +1,22 @@
 -------------------------------------------------------------------------------------------------------------------
 
 -- Top 10 tracks with Highest Tempo (from Musicality Table)
+-- http://localhost:8080
+SELECT Track.Track, Artist_Name, Album_Name, Musicality.Tempo, Musicality.Musicality_Key, 
+    Energy.Energy, Energy.Danceability, Human_Connection.Valence, Human_Connection.Liveness,
+    Spoken_Volume.Loudness, Spoken_Volume.Instrumentalness, Spoken_Volume.Speechiness, Spoken_Volume.Acousticness
+  FROM Track 
+  JOIN Musicality ON Track.Track_ID = Musicality.Track_ID
+  JOIN Energy ON Track.Track_ID = Energy.Track_ID
+  JOIN Human_Connection ON Track.Track_ID = Human_Connection.Track_ID
+  JOIN Spoken_Volume ON Track.Track_ID = Spoken_Volume.Track_ID
+  JOIN Album ON Track.Album_ID = Album.Album_ID
+  JOIN Artist on Album.Artist_ID = Artist.Artist_ID
+  ORDER BY Track.Track;
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- Top 10 tracks with Highest Tempo (from Musicality Table)
 -- http://localhost:8080/musicality
 SELECT Track.Track, Artist_Name, Musicality.Tempo 
   FROM Track 
