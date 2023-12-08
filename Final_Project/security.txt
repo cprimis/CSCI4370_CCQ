@@ -1,1 +1,3 @@
 -- Describes the approach you used to securely store user passwords
+
+In this project, we salted and hashed the passwords to ensure secure saving of passwords. One can make an account with "" and "" for the username and password respectively. 
