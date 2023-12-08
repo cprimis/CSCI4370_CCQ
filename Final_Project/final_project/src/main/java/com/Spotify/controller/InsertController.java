@@ -252,9 +252,9 @@ public class InsertController {
     	ModelAndView mv = new ModelAndView("insert");
         try {
             Connection connection = DriverManager.getConnection(url, user, password);
-            String test_search = "1oqNnxue9r4IvSwrsqstW2";
-            Track test_track = searchTrack(test_search);
-            insertTrack(test_search);
+//          String test_search = "1oqNnxue9r4IvSwrsqstW2";
+//          Track test_track = searchTrack(test_search);
+            insertTrack(spotify_id);
 
    
         } catch (SQLException e) {
