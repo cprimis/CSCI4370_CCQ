@@ -283,6 +283,26 @@ $ mysql # on another terminal
 mysql> UPDATE mysql.user SET password=PASSWORD('new_pass') WHERE user='root';
 ```
 
+
+    public static String readAllCookies(HttpServletRequest request) {
+
+        Cookie[] cookies = request.getCookies();
+
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+        		System.out.println(cookie.getValue());            	
+        		System.out.println(cookie.getName());
+        		if(cookie.getName() == "name") {
+            		System.out.println(cookie.getValue());
+            		System.out.println(cookie.getValue());
+            	} // if
+            }
+            return Arrays.stream(cookies)
+                    .map(c -> c.getName() + "=" + c.getValue()).collect(Collectors.joining(", "));
+        }
+
+        return "No cookies";
+    }
 ```bash
 ## Switch back to the mysqld_safe terminal and kill the process using Control + \
 $ /etc/init.d/mysql start
