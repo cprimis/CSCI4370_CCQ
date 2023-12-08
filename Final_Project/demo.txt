@@ -1,0 +1,16 @@
+We had technical issues with the video, sorry!
+
+After using ddl.sql and data.sql, 
+To compile the webapp navigate to the directory that the webapp code is in. Run the following:
+
+mvn clean package 
+cd target
+java -jar data-0.0.1-SNAPSHOT.jar
+
+In Chrome/Firefox/etc., go to: 
+http://localhost:8080/
+
+You will be redirected to the login page until you login or register and then login. 
+From there, you can add a song to the datanbase by first looking up a song and artist and hitting submit. 
+A table with a list of results for that song should appear. Copy and paste the desired song's Spotify ID into the second 
+entry and submit that. The database will add the new song.
