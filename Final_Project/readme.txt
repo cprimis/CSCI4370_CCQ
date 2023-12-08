@@ -7,7 +7,7 @@ Group Member Roles (tasks done):
 Tushita Bansal: 
 Jeremiah Haudey:
 Alex Chiang: dynamic pages, data creation
-Paola Mora Galazzo: 
+Paola Mora Galazzo: dataset cleaning/formatting, entity ideas, converting original csv into separate data tables, sql queries (Top 10 Tracks, means queries)
 Chris Primis:
 
 Technologies/Libraries Used: SQL, Java, Docker, Eclipse 
