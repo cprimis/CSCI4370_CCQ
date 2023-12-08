@@ -4,7 +4,7 @@ Group Name: Data Dawgs
 Team Member Names: Tushita Bansal, Jeremiah Haudey, Alex Chiang, Paola Mora Galazzo, Chris Primis
 
 Group Member Roles (tasks done):
-Tushita Bansal: 
+Tushita Bansal: finding/cleaning dataset, prelim, db design, er model, sql queries
 Jeremiah Haudey:
 Alex Chiang: dynamic pages (musicality, energy, atmosphere, volume, leaderboard), home page, random page, and related controller, mustache, and classes, data creation, queries
 Paola Mora Galazzo: dataset cleaning/formatting, entity ideas, converting original csv into separate data tables, sql queries (Top 10 Tracks, means queries)
