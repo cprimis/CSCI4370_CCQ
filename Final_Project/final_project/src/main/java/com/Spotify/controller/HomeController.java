@@ -39,8 +39,36 @@ public class HomeController {
 
             List<AllStats> songs = new ArrayList<>();
             while (rs.next()) {
+                double keyNum = rs.getDouble("Musicality_Key");
+                String key = null;
+                if (keyNum == 0) {
+                    key = "C";
+                } else if (keyNum == 1) {
+                    key = "C♯/D♭";
+                } else if (keyNum == 2) {
+                    key = "D";
+                } else if (keyNum == 3) {
+                    key = "D♯/E♭";
+                } else if (keyNum == 4) {
+                    key = "E";
+                } else if (keyNum == 5) {
+                    key = "F";
+                } else if (keyNum == 6) {
+                    key = "F♯/G♭";
+                } else if (keyNum == 7) {
+                    key = "G";
+                } else if (keyNum == 8) {
+                    key = "G♯/A♭";
+                } else if (keyNum == 9) {
+                    key = "A";
+                } else if (keyNum == 10) {
+                    key = "A♯/B♭";
+                } else if (keyNum == 11) {
+                    key = "B";
+                }
+                
                 AllStats song = new AllStats(rs.getString("Track"), rs.getString("Artist_Name"),
-                        rs.getString("Album_Name"), rs.getDouble("Tempo"), rs.getDouble("Musicality_Key"),
+                        rs.getString("Album_Name"), rs.getDouble("Tempo"), key,
                         rs.getDouble("Energy"), rs.getDouble("Danceability"), rs.getDouble("Valence"),
                         rs.getDouble("Liveness"), rs.getDouble("Loudness"), rs.getDouble("Instrumentalness"),
                         rs.getDouble("Speechiness"), rs.getDouble("Acousticness"));
