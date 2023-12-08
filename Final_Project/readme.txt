@@ -18,3 +18,12 @@ Database Username: root
 Password: mysqlpass
 
 Test Username/Password Pairs (3):
+
+user: chris
+pass: 123
+
+user: sami
+pass: pass
+
+user: foo
+pass: bar
