@@ -14,7 +14,7 @@ Technologies/Libraries Used: SQL, MySQL, Java, SpringBoot, Mustache, Maven, Dock
 
 Database Name: Spotify
 
-Database Username:
-Password:
+Database Username: root
+Password: mysqlpass
 
 Test Username/Password Pairs (3):
