@@ -20,8 +20,10 @@ public class VolumeController {
 
     @GetMapping("/volume")
     public ModelAndView volume(HttpServletRequest request) {
-
-
+        if(LoginController.isLoggedIn(request) == false) {
+        	System.out.println("User is not logged in");
+        	return new ModelAndView("login");
+        } // if
         ModelAndView mv = new ModelAndView("volume");
         try {
             Connection connection = DriverManager.getConnection(url, user, password);
