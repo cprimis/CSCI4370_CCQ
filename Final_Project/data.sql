@@ -13256,3 +13256,7 @@ INSERT INTO Performance VALUES
 ('1504','1504','322740','7437'),
 ('1505','1505','278075','9292'),
 ('1506','1506','89802','3304');
+
+INSERT INTO user_login (username, password, last_login) VALUES ('chris', '123', '1-1-1999');
+INSERT INTO user_login (username, password, last_login) VALUES ('sami', 'pass', '1-1-1999');
+INSERT INTO user_login (username, password, last_login) VALUES ('foo', 'bar', '1-1-1999');
