@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 @RestController
 public class WebController {
 
-    String url = "jdbc:mysql://localhost:33306/Project_2";
+    String url = "jdbc:mysql://localhost:33306/Spotify";
     String username = "root";
     String password = "mysqlpass";
     
